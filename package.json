@@ -22,7 +22,6 @@
     "react-dom": "^18.2.0",
     "tailwind-merge": "^2.2.1",
     "tailwindcss": "^3.4.1",
-    "@tailwindcss/typography": "^0.5.10",
-    "cn-tailwind": "^2.2.1"
+    "@tailwindcss/typography": "^0.5.10"
   }
 }
