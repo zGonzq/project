@@ -1,54 +1,98 @@
-# Astro Starter Kit: Basics
+# Gonzalo Leal - Portfolio
 
-```sh
-npm create astro@latest -- --template basics
+Este es el repositorio del portfolio de Gonzalo Leal, un programador y diseñador. El sitio web está construido con Astro, React y TailwindCSS, y presenta una colección de proyectos destacados.
+
+## Tecnologías Utilizadas
+
+- **Astro**: Framework para construir sitios web rápidos y modernos.
+- **React**: Biblioteca de JavaScript para construir interfaces de usuario.
+- **TailwindCSS**: Framework de CSS para un diseño rápido y eficiente.
+- **TypeScript**: Un superconjunto de JavaScript que añade tipos estáticos.
+- **Node.js**: Entorno de ejecución para JavaScript en el servidor.
+- **Express**: Framework web para Node.js.
+- **MQTT**: Protocolo de mensajería para IoT.
+- **NodeMCU**: Plataforma de desarrollo de hardware para IoT.
+
+## Estructura del Proyecto
+
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
+.
+├── .astro/
+├── .vscode/
 ├── public/
-│   └── favicon.svg
+│   └── img/
+│       └── projects/
 ├── src/
 │   ├── components/
-│   │   └── Card.astro
+│   │   ├── Card.astro
+│   │   ├── Header.astro
+│   │   ├── HeroSection.astro
+│   │   ├── ProjectCard.tsx
+│   │   ├── ProjectsSection.astro
+│   │   ├── ThemeToggle.tsx
+│   │   └── ui/
+│   ├── content/
+│   │   ├── config.ts
+│   │   └── projects/
 │   ├── layouts/
 │   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── pages/
+│   │   ├── index.astro
+│   │   └── projects/
+│   └── utils/
+├── astro.config.mjs
+├── package.json
+├── tailwind.config.mjs
+└── tsconfig.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Instalación
 
-Any static assets, like images, can be placed in the `public/` directory.
+1. Clona el repositorio:
+```sh
+git clone https://github.com/zGonzq/portfolio.git
+```
+2. Navega al directorio del proyecto:
+```sh
+cd portfolio
+```
+3. Instala las dependencias:
+```sh
+npm install
+```
 
-## 🧞 Commands
+## Uso
 
-All commands are run from the root of the project, from a terminal:
+Inicia el servidor de desarrollo:
+```sh
+npm run dev
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Para construir el proyecto para producción, ejecuta:
+```sh
+npm run build
+```
 
-## 👀 Want to learn more?
+Para previsualizar el proyecto construido, ejecuta:
+```sh
+npm run preview
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Proyectos Destacados
+
+Los proyectos destacados se encuentran en la carpeta `src/content/projects/`. Cada proyecto tiene su propio archivo `.md` con la siguiente estructura:
+
+```md
+---
+title: Enma Discord Bot
+description: This is an example project to demonstrate the markdown functionality
+tags: ['discord', 'bot']
+githubUrl:
+img: /img/projects/enma-discord-bot.png
+---
+
+![Enma Discord Bot](/img/projects/enma-discord-bot.png)
+
+Enma se presenta como un bot multifuncional diseñado meticulosamente para proporcionar una gestión eficiente y una experiencia enriquecedora en tu servidor de Discord. Sus características avanzadas abarcan desde la moderación rigurosa hasta funciones de entretenimiento y utilidad.
+```
