@@ -1,0 +1,27 @@
+---
+import ProjectCard from '../components/ProjectCard';
+import Layout from '../layouts/Layout.astro';
+
+const projects = [
+    {
+        title: "Enma Discord Bot",
+        description: "Bot de Discord desarrollado con JavaScript y Node.js para gestionar comunidades y automatizar tareas.",
+        tags: ["JavaScript", "Node.js", "Discord.js"],
+        githubUrl: "#",
+        slug: "enma-discord-bot"
+    },
+];
+---
+<Layout title="Projects - Gonzalo Leal">
+
+    <section class="py-20">
+        <h2 class="text-3xl font-bold text-center mb-12">Todos los proyectos</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto px-4">
+            {projects.map((project) => (
+                <ProjectCard client:visible {...project} />
+            ))}
+        </div>
+    </section>
+
+
+</Layout>

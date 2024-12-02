@@ -1,0 +1,31 @@
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1000 1000" style="enable-background:new 0 0 1000 1000;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#XMLID_2_);}
+	.st1{fill:url(#XMLID_3_);}
+	.st2{fill:#000000;}
+
+@media (prefers-color-scheme: dark) {
+    .st2 {
+        fill: #ffffff;
+    }
+}
+</style>
+<linearGradient id="XMLID_2_" gradientUnits="userSpaceOnUse" x1="405.1103" y1="825.5292" x2="593.6884" y2="825.5292">
+	<stop  offset="0" style="stop-color:#FF8E44"/>
+	<stop  offset="0.5" style="stop-color:#F91362"/>
+	<stop  offset="1" style="stop-color:#35126A"/>
+</linearGradient>
+<polygon id="XMLID_25_" class="st0" points="405.1,825.5 499.4,662.2 593.7,825.5 499.4,988.8 "/>
+<linearGradient id="XMLID_3_" gradientUnits="userSpaceOnUse" x1="366.278" y1="499.957" x2="633.7289" y2="499.957">
+	<stop  offset="0" style="stop-color:#FF8E44"/>
+	<stop  offset="0.5" style="stop-color:#F91362"/>
+	<stop  offset="1" style="stop-color:#35126A"/>
+</linearGradient>
+<path id="XMLID_23_" class="st1" d="M372.4,557.9l127-220.2l128.1,220c8.2,14.1,8.3,31.6,0.1,45.7l-33.9,58.8l-94.3-165.7L405.1,660
+	l-32.7-56.6C364.2,589.3,364.2,572,372.4,557.9z"/>
+<path id="XMLID_10_" class="st2" fill="currentColor" d="M863.4,686l-32.9,57l-47.2-81.7L689,824.7l-32.9-57.1c-8-13.9-8.1-31.1-0.3-45.1l71.1-126.3
+c5.7-10.2,5.7-22.7-0.2-32.8L689,498.1L499.6,170.4L311,497l-37.7,65.3c-5.9,10.2-5.9,22.6-0.2,32.8l71.1,126.3
+c7.9,14,7.8,31.2-0.3,45.1l-32.9,57l-94.3-163.3L169.5,742l-32.9-57c-8.1-14-8.1-31.3-0.1-45.4L499.4,11.2l364,629.5
+C871.5,654.7,871.5,672,863.4,686z"/>
+</svg>

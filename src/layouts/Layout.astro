@@ -1,0 +1,46 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import ThemeToggle from '../components/ThemeToggle';
+import Logo from '../components/Logo.astro';
+import { FlipWords } from '../components/ui/FlipWords';
+import Header from '../components/Header.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Gonzalo Leal - Portfolio" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme') || 
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+  </head>
+  <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors">
+  <Header />
+    <main class="container mx-auto px-4 pt-24 min-h-screen">
+      <slot />
+    </main>
+    <footer class="container mx-auto px-4 py-8 mt-12 text-center text-gray-600 dark:text-gray-400">
+      <p>&copy; {new Date().getFullYear()} Gonzalo Leal. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

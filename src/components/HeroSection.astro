@@ -1,0 +1,25 @@
+---
+import { TypewriterEffect } from './ui/TypewriterEffect';
+import Logo from './Logo.astro';
+---
+
+<section class="min-h-[85vh] flex flex-col items-center justify-center">
+  <div class="flex flex-col items-center text-center">
+    <Logo class="size-48 mb-2" />
+    <div class="h-[100px] flex items-center justify-center">
+      <TypewriterEffect
+        client:load
+        words={["Hola, soy Gonzalo Leal"]}
+        className="text-4xl sm:text-5xl font-bold text-gray-800 dark:text-white"
+        cursorClassName="bg-primary"
+      />
+    </div>
+    <div class="flex items-center justify-center text-2xl sm:text-3xl text-gray-600 dark:text-gray-300">
+    <p class="max-w-2xl text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+      Estudiante de Analista Programador de la universidad Santo Tomás de Temuco, Chile. 
+      Titulado de Gráfico de nivel Medio y en constante aprendizaje del área de la programación.
+    </p>
+    
+  </div>
+  
+</section>
