@@ -16,10 +16,24 @@ export default {
       },
       animation: {
         'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'scroll': 'scroll var(--duration) linear infinite',
+        'scroll-reverse': 'scroll-reverse var(--duration) linear infinite',
+        },
+        keyframes: {
+          'scroll': {
+            '0%': { transform: 'translateX(0)' },
+            '100%': { transform: 'translateX(calc(-50%))' }
+          },
+          'scroll-reverse': {
+            '0%': { transform: 'translateX(0)' },
+            '100%': { transform: 'translateX(calc(50%))' }
+          },
       }
     },
   },
+
   plugins: [
     require('@tailwindcss/typography'),
+
   ],
 }

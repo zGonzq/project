@@ -1,0 +1,33 @@
+---
+import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
+
+const technologies = [
+  { name: "MongoDB", icon: "🍃" },
+  { name: "JavaScript", icon: "💛" },
+  { name: "TypeScript", icon: "💙" },
+  { name: "Java", icon: "☕" },
+  { name: "Astro", icon: "🚀" },
+  { name: "MySQL", icon: "🐬" },
+  { name: "Express", icon: "⚡" },
+  { name: "Node.js", icon: "💚" },
+  { name: "Git", icon: "🌳" },
+  { name: "GitHub", icon: "🐱" },
+  { name: "Tailwind", icon: "🎨" },
+  { name: "HTML", icon: "🌐" },
+  { name: "CSS", icon: "🎯" },
+];
+---
+
+<section class="py-20 overflow-hidden">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">Tecnologías</h2>
+    <div class="relative w-full">
+      <InfiniteMovingCards 
+        client:visible
+        items={technologies}
+        direction="left"
+        speed="slow"
+      />
+    </div>
+  </div>
+</section>
