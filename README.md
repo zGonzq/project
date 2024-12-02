@@ -8,10 +8,7 @@ Este es el repositorio del portfolio de Gonzalo Leal, un programador y diseñado
 - **React**: Biblioteca de JavaScript para construir interfaces de usuario.
 - **TailwindCSS**: Framework de CSS para un diseño rápido y eficiente.
 - **TypeScript**: Un superconjunto de JavaScript que añade tipos estáticos.
-- **Node.js**: Entorno de ejecución para JavaScript en el servidor.
-- **Express**: Framework web para Node.js.
-- **MQTT**: Protocolo de mensajería para IoT.
-- **NodeMCU**: Plataforma de desarrollo de hardware para IoT.
+- **Markdown**: Lenguaje de marcado ligero para formatear texto.
 
 ## Estructura del Proyecto
 
