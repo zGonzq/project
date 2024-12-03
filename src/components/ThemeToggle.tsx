@@ -36,9 +36,11 @@ export default function ThemeToggle() {
       className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800 transition-colors"
       aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
     >
-      <span className="text-xl">
-        {theme === 'light' ? '🌙' : '☀️'}
-      </span>
+      {theme === 'light' ? (
+      <img src="/moon.svg" alt="Moon icon" className="h-6 w-6" />
+      ) : (
+      <img src="/sun.svg" alt="Sun icon" className="h-6 w-6 dark:text-white" />
+      )}
     </button>
   );
 }

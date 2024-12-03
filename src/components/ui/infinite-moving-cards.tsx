@@ -3,7 +3,7 @@ import { cn } from "../../utils/cn";
 
 interface Technology {
   name: string;
-  icon: string | JSX.Element;
+  icon: string;
 }
 
 interface InfiniteMovingCardsProps {
@@ -46,7 +46,7 @@ export const InfiniteMovingCards = ({
             className="flex-shrink-0 w-[150px] rounded-xl border border-slate-700/30 px-8 py-6 bg-white/5 backdrop-blur-sm"
           >
             <div className="flex justify-center text-4xl">
-              {item.icon}
+              <img src={item.icon} alt={item.name} className="h-12 w-12" />
             </div>
             <div className="text-center mt-4 text-sm font-medium text-slate-700 dark:text-slate-300">
               {item.name}
