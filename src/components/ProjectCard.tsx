@@ -19,7 +19,7 @@ export default function ProjectCard({ title, description, tags, githubUrl, slug 
     >
       <div className="relative h-48 w-full">
         <img
-          src={`/img/projects/${slug}.png`}
+          src={`/img/projects/${slug}.webp`}
           alt={title}
           className="object-cover w-full h-full"
         />

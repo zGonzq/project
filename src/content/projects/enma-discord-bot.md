@@ -5,7 +5,7 @@ tags: ['discord', 'bot']
 githubUrl: https://github.com/zGonzq/EnmaV2
 ---
 
-![Enma discord bot](/img/projects/enma-discord-bot.png)
+![Enma discord bot](/img/projects/enma-discord-bot.webp)
 Enma se presenta como un bot multifuncional diseñado meticulosamente para proporcionar una gestión eficiente y una experiencia enriquecedora en tu servidor de Discord. Sus características avanzadas abarcan desde la moderación rigurosa hasta funciones de entretenimiento y utilidad.
 
 ⚜ Sistema de Moderación Avanzada:
