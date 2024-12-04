@@ -49,7 +49,7 @@ export default function ProjectCard({ title, description, tags, githubUrl, slug 
           </a>
           <a
             href={`/projects/${slug}`}
-            className="px-4 py-2 bg-primary text-white rounded hover:opacity-90 transition-transform hover:scale-105"
+            className="px-4 py-2 bg-primary-light dark:bg-primary-dark text-white rounded hover:opacity-90 transition-transform hover:scale-105 hover:bg-primary dark:hover:bg-primary"
           >
             Ver más
           </a>

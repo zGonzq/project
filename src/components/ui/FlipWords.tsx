@@ -44,7 +44,7 @@ export const FlipWords = ({
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -20, opacity: 0 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className={`absolute left-0 ${className}`}
+          className={`absolute left-0 ${className} hover:text-primary dark:hover:text-primary transition-colors`}
         >
           {words[index]}
         </motion.span>

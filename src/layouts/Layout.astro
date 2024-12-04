@@ -1,11 +1,10 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
-import ThemeToggle from '../components/ThemeToggle';
-import Logo from '../components/Logo.astro';
-import { FlipWords } from '../components/ui/FlipWords';
 import Header from '../components/Header.astro';
 import  SpeedInsights  from "@vercel/speed-insights/astro"
 import Analytics from '@vercel/analytics/astro'
+import Footer from '../components/Footer.astro';
+import {FloatingNav} from '../components/ui/floating-navbar';
 
 interface Props {
   title: string;
@@ -25,26 +24,34 @@ const { title } = Astro.props;
     <title>{title}</title>
     <ViewTransitions />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script is:inline>
-      (function() {
-        const theme = localStorage.getItem('theme') || 
-          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        
-        if (theme === 'dark') {
+    <script>
+      function initTheme() {
+        if (
+          localStorage.getItem('color-theme') === 'dark' ||
+          (!localStorage.getItem('color-theme') &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
           document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
         }
-      })();
+      }
+
+      // Run on initial load
+      initTheme();
+
+      // Re-run on view transitions
+      document.addEventListener('astro:after-swap', initTheme);
     </script>
         <Analytics/>
         <SpeedInsights/>
   </head>
   <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors">
-  <Header />
+    <FloatingNav client:load />
     <main class="container mx-auto px-4 pt-24 min-h-screen">
       <slot />
     </main>
-    <footer class="container mx-auto px-4 py-8 mt-12 text-center text-gray-600 dark:text-gray-400">
-      <p>&copy; {new Date().getFullYear()} Gonzalo Leal. All rights reserved.</p>
-    </footer>
+    <Footer />
   </body>
 </html>
+
