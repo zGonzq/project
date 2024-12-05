@@ -11,7 +11,7 @@ const education = [
         endDate: "Presente",
     },
     {
-        institution: "Complejo Educacional Monseñor Guillermo Hartl",
+        institution: "Monseñor Guillermo Hartl",
         logo: "/logos/hartl.webp",
         career: "Gráfica",
         startDate: "2021",
@@ -27,8 +27,8 @@ const education = [
       {education.map((edu) => (
         <AnimatedCard client:visible className="group bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow mb-6">
           <div class="flex items-center gap-6">
-            <div class="w-20 h-20 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-xl group-hover:scale-110 transition-transform">
-              <img src={edu.logo} alt={edu.institution} class="w-16 h-16 object-contain" />
+            <div class="w-20 h-20 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-xl overflow-hidden group-hover:scale-110 transition-transform">
+              <img src={edu.logo} alt={edu.institution} class="w-full h-full object-cover" />
             </div>
             <div>
               <h3 class="text-xl font-bold text-gray-900 dark:text-white">{edu.career}</h3>

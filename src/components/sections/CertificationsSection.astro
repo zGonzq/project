@@ -5,7 +5,7 @@ import { AnimatedCard } from '../ui/AnimatedCard';
 const certifications = [
     {
         provider: "Cisco",
-        logo: "/logos/cisco.svg",
+        logo: "/logos/cisco.webp",
         title: "IT Essentials",
         date: "2023",
         providerName: "Cisco Networking Academy"
@@ -42,8 +42,8 @@ const certifications = [
       {certifications.map((cert) => (
         <AnimatedCard client:visible className="group bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
           <div class="flex items-center gap-4">
-            <div class="w-16 h-16 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-xl group-hover:scale-110 transition-transform">
-              <img src={cert.logo} alt={cert.provider} class="w-12 h-12" />
+      <div class="w-16 h-16 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-xl overflow-hidden group-hover:scale-110 transition-transform">
+        <img src={cert.logo} alt={cert.provider} class="w-full h-full object-cover" />
             </div>
             <div>
               <h3 class="text-lg font-bold text-gray-900 dark:text-white">{cert.title}</h3>
