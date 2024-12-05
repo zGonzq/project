@@ -11,7 +11,7 @@ const JobStatus = () => {
     <div className="flex justify-center items-center">
       <button
         onClick={toggleJobStatus}
-        className="relative hover:scale-105 flex justify-center items-center w-[226px] h-[46px] rounded-full text-sm font-semibold border-2 text-gray-600 dark:border-gray-800 dark:text-gray-400 transition-all duration-300 hover:bg-primary-light hover:dark:bg-primary-dark"
+        className="relative hover:scale-105 flex justify-center items-center w-[226px] h-[46px] rounded-full text-sm font-semibold border-2 text-gray-600 dark:border-gray-800 dark:text-gray-400 transition-all duration-300 hover:bg-primary"
       >
         <span className="relative">
           {isLookingForJob ? 'Buscando trabajo' : 'No buscando trabajo'}

@@ -1,0 +1,42 @@
+---
+import SectionTitle from './SectionTitle.astro';
+import { AnimatedCard } from './ui/AnimatedCard';
+
+const experiences = [
+    {
+        date: "2022 Dic - 2023 Feb",
+        title: "Practicante de Gráfica",
+        company: "Grafic Sur",
+        description: "Realización de trabajos de diseño gráfico, impresión, atención al cliente y ensamblaje de productos.",
+    },
+
+];
+---
+
+<section class="py-20">
+  <div class="container mx-auto px-4">
+    <SectionTitle title="Experiencia Laboral" icon="/icons/titles/experience.svg" />
+    <div class="max-w-3xl mx-auto">
+      <div class="relative space-y-12">
+        <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-700"></div>
+        {experiences.map((experience) => (
+          <AnimatedCard client:visible>
+            <div class="relative flex items-start group">
+              <div class="absolute left-0 top-0 w-16 h-16 flex items-center justify-center ">
+                <div class="w-4 h-4 rounded-full bg-primary group-hover:scale-125 transition-transform"></div>
+              </div>
+              <div class="ml-24 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg mb-6 group-hover:shadow-xl transition-shadow">
+                <span class="inline-block px-3 py-1 text-sm text-primary bg-primary/10 rounded-full mb-2">
+                  {experience.date}
+                </span>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">{experience.title}</h3>
+                <div class="text-gray-600 dark:text-gray-300 mb-2">{experience.company}</div>
+                <p class="text-gray-700 dark:text-gray-400">{experience.description}</p>
+              </div>
+            </div>
+          </AnimatedCard>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

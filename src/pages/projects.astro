@@ -1,40 +1,45 @@
 ---
 import ProjectCard from '../components/ProjectCard';
+import SectionTitle from '../components/SectionTitle.astro';
 import Layout from '../layouts/Layout.astro';
 
 const projects = [
-    {
-        title: "Enma Discord Bot",
-        description: "Bot de Discord desarrollado con JavaScript y Node.js para gestionar comunidades y automatizar tareas.",
-        tags: ["JavaScript", "Node.js", "Discord.js"],
-        githubUrl: "https://github.com/zGonzq/EnmaV3",
-        slug: "enma-discord-bot"
-    },
-    {
-        title: "Control de Asistencia",
-        description: "Sistema de control de asistencia desarrollado con Express, TypeScript y Node.js.",
-        tags: ["TypeScript", "Express", "Node.js"],
-        githubUrl: "#",
-        slug: "control-asistencia"
-    },
-    {
-        title: "Sistema IoT de Temperatura",
-        description: "Sistema de monitoreo de temperatura y humedad utilizando TypeScript, Node.js, MQTT y NodeMCU.",
-        tags: ["TypeScript", "Node.js", "MQTT", "IoT"],
-        githubUrl: "https://github.com/zGonzq/Sistema-TH",
-        slug: "sistema-temperatura"
-    },
+  {
+    title: "Enma Discord Bot",
+    description: "Bot de Discord desarrollado con JavaScript y Node.js para gestionar comunidades y automatizar tareas.",
+    tags: ["JavaScript", "Node.js", "Discord.js"],
+    githubUrl: "#",
+    slug: "enma-discord-bot",
+    image: "/img/projects/enma-discord-bot.webp"
+  },
+  {
+    title: "Control de Asistencia",
+    description: "Sistema de control de asistencia desarrollado con Express, TypeScript y Node.js.",
+    tags: ["TypeScript", "Express", "Node.js"],
+    githubUrl: "#",
+    slug: "control-asistencia",
+    image: "/img/projects/control-asistencia.webp"
+  },
+  {
+    title: "Sistema IoT de Temperatura",
+    description: "Sistema de monitoreo de temperatura y humedad utilizando TypeScript, Node.js, MQTT y NodeMCU.",
+    tags: ["TypeScript", "Node.js", "MQTT", "IoT"],
+    githubUrl: "#",
+    slug: "sistema-temperatura",
+    image: "/img/projects/sistema-temperatura.webp"
+  }
+  
 ];
 ---
 <Layout title="Projects - Gonzalo Leal">
 
     <section class="py-20">
-        <h2 class="text-3xl font-bold text-center mb-12">Todos los proyectos</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto px-4">
+        <SectionTitle title="Todos los Proyectos" icon="/icons/titles/allProjects.svg" />
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project) => (
-                <ProjectCard client:visible {...project} />
+              <ProjectCard client:visible {...project} />
             ))}
-        </div>
+          </div>
     </section>
 
 

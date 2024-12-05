@@ -5,6 +5,7 @@ import  SpeedInsights  from "@vercel/speed-insights/astro"
 import Analytics from '@vercel/analytics/astro'
 import Footer from '../components/Footer.astro';
 import {FloatingNav} from '../components/ui/floating-navbar';
+import ScrollToTop from '../components/ui/ScrollToTop';
 
 interface Props {
   title: string;
@@ -85,6 +86,7 @@ const { title } = Astro.props;
     <main class="container mx-auto px-4 pt-24 flex-grow">
       <slot />
     </main>
+    <ScrollToTop client:load />
     <Footer />
   </body>
 </html>

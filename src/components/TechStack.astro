@@ -1,26 +1,27 @@
 ---
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
+import SectionTitle from './SectionTitle.astro';
 
 const technologies = [
-  { name: "MongoDB", icon: "/icons/mongodb.svg" },
-  { name: "JavaScript", icon: "/icons/javascript.svg" },
-  { name: "TypeScript", icon: "/icons/typescript.svg" },
-  { name: "Java", icon: "/icons/java.svg" },
-  { name: "Astro", icon: "/icons/astro.svg" },
-  { name: "MySQL", icon: "/icons/mysql.svg" },
-  { name: "Express", icon: "/icons/expressjs.svg" },
-  { name: "Node.js", icon: "/icons/nodejs.svg" },
-  { name: "Git", icon: "/icons/git.svg" },
-  { name: "GitHub", icon: "/icons/github.svg" },
-  { name: "Tailwind", icon: "/icons/tailwindcss.svg" },
-  { name: "HTML", icon: "/icons/html.svg" },
-  { name: "CSS", icon: "/icons/css.svg" },
+  { name: "MongoDB", icon: "/icons/tech/mongodb.svg" },
+  { name: "JavaScript", icon: "/icons/tech/javascript.svg" },
+  { name: "TypeScript", icon: "/icons/tech/typescript.svg" },
+  { name: "Java", icon: "/icons/tech/java.svg" },
+  { name: "Astro", icon: "/icons/tech/astro.svg" },
+  { name: "MySQL", icon: "/icons/tech/mysql.svg" },
+  { name: "Express", icon: "/icons/tech/expressjs.svg" },
+  { name: "Node.js", icon: "/icons/tech/nodejs.svg" },
+  { name: "Git", icon: "/icons/tech/git.svg" },
+  { name: "GitHub", icon: "/icons/tech/github.svg" },
+  { name: "Tailwind", icon: "/icons/tech/tailwindcss.svg" },
+  { name: "HTML", icon: "/icons/tech/html.svg" },
+  { name: "CSS", icon: "/icons/tech/css.svg" }
 ];
 ---
 
-<section class="py-10 overflow-hidden">
+<section class="py-20 overflow-hidden">
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-12">Tecnologías</h2>
+    <SectionTitle title="Tecnologías" icon="/icons/titles/tech.svg" />
     <div class="relative w-full">
       <InfiniteMovingCards 
         client:visible

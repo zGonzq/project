@@ -1,4 +1,5 @@
 ---
+import SectionTitle from './SectionTitle.astro';
 import ProjectCard from './ProjectCard';
 
 const projects = [
@@ -6,33 +7,37 @@ const projects = [
     title: "Enma Discord Bot",
     description: "Bot de Discord desarrollado con JavaScript y Node.js para gestionar comunidades y automatizar tareas.",
     tags: ["JavaScript", "Node.js", "Discord.js"],
-    githubUrl: "https://github.com/zGonzq/EnmaV2",
-    slug: "enma-discord-bot"
+    githubUrl: "#",
+    slug: "enma-discord-bot",
+    image: "/img/projects/enma-discord-bot.webp"
   },
   {
     title: "Control de Asistencia",
     description: "Sistema de control de asistencia desarrollado con Express, TypeScript y Node.js.",
     tags: ["TypeScript", "Express", "Node.js"],
     githubUrl: "#",
-    slug: "control-asistencia"
+    slug: "control-asistencia",
+    image: "/img/projects/control-asistencia.webp"
   },
   {
     title: "Sistema IoT de Temperatura",
     description: "Sistema de monitoreo de temperatura y humedad utilizando TypeScript, Node.js, MQTT y NodeMCU.",
     tags: ["TypeScript", "Node.js", "MQTT", "IoT"],
     githubUrl: "#",
-    slug: "sistema-temperatura"
-  },
+    slug: "sistema-temperatura",
+    image: "/img/projects/sistema-temperatura.webp"
+  }
+  
 ];
 ---
 
-<section class="py-10">
-  <h2 class="text-3xl font-bold text-center mb-12">Proyectos Destacados</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto px-4">
-    {projects.map((project) => (
-      <ProjectCard client:visible {...project} />
-    ))}
+<section class="py-20">
+  <div class="container mx-auto px-4">
+    <SectionTitle title="Proyectos Destacados" icon="/icons/titles/projects.svg" />
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {projects.map((project) => (
+        <ProjectCard client:visible {...project} />
+      ))}
+    </div>
   </div>
-  <a href="/projects" class="block bg-primary-light hover:dark:bg-primary hover:bg-primary dark:bg-primary-dark hover:scale-105 transition-all text-white text-center py-2 px-4 rounded-md mt-8 mx-auto max-w-xs">Ver todos los proyectos</a>
-
 </section>
