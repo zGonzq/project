@@ -2,7 +2,7 @@
 title: Control de asistencia
 description: Sistema de control de asistencia para la materia de Integración de Competencias
 tags: ['Typescript', 'MySql', 'Node.js', 'Express', 'Bootstrap']
-githubUrl: https://github.com/zGonzq/EnmaV2
+githubUrl: "#"
 ---
 
 <p>

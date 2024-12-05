@@ -21,21 +21,30 @@ Este es el repositorio del portfolio de Gonzalo Leal, un programador y diseñado
 │       └── projects/
 ├── src/
 │   ├── components/
-│   │   ├── Card.astro
-│   │   ├── Header.astro
-│   │   ├── HeroSection.astro
-│   │   ├── ProjectCard.tsx
-│   │   ├── ProjectsSection.astro
-│   │   ├── ThemeToggle.tsx
-│   │   └── ui/
+│   │   ├── dependant/
+│   │   │   └── ProjectCard.tsx
+│   │   ├── sections/
+│   │   │   ├── CertificationsSection.astro
+│   │   │   ├── EducationSection.astro
+│   │   │   ├── ExperienceSection.astro
+│   │   │   ├── HeroSection.astro
+│   │   │   ├── ProjectsSection.astro
+│   │   │   └── TechStack.astro
+│   │   ├── ui/
+│   │   │   ├── floating-navbar.astro
+│   │   │   └── ScrollToTop.astro
 │   ├── content/
-│   │   ├── config.ts
 │   │   └── projects/
+│   │       ├── control-asistencia.md
+│   │       ├── enma-discord-bot.md
+│   │       └── sistema-temperatura.md
 │   ├── layouts/
 │   │   └── Layout.astro
 │   ├── pages/
+│   │   ├── 404.astro
+│   │   ├── about.astro
 │   │   ├── index.astro
-│   │   └── projects/
+│   │   └── projects.astro
 │   └── utils/
 ├── astro.config.mjs
 ├── package.json
