@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import ThemeToggle from "../ThemeToggle";
+import ThemeToggle from "../dependant/ThemeToggle";
 import { Logo } from "./Logo";
 import { FlipWords } from "./FlipWords";
 

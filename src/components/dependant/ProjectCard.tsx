@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Github } from './icons/Github';
+import { Github } from '../icons/Github';
 
 interface ProjectCardProps {
   title: string;
