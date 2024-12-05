@@ -9,15 +9,15 @@ export const FloatingNav = () => {
   
   const navItems = [
     {
-      name: "Home",
+      name: "Inicio",
       link: "/",
     },
     {
-      name: "Projects",
+      name: "Proyectos",
       link: "/projects",
     },
     {
-      name: "About",
+      name: "Sobre mí",
       link: "/about",
     },
   ];
