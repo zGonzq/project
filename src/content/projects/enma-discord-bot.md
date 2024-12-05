@@ -2,7 +2,7 @@
 title: Enma discord bot
 description: This is an example project to demonstrate the markdown functionality
 tags: ['discord', 'bot']
-githubUrl: https://github.com/zGonzq/EnmaV2
+githubUrl: https://github.com/zGonzq/EnmaV3
 ---
 
 <p>
@@ -29,6 +29,6 @@ Entre las características destacadas de **Enma** se encuentran:
 
 **Enma** está en constante desarrollo, actualizándose regularmente con nuevas funcionalidades para asegurar que los servidores de Discord estén siempre equipados con las herramientas más actuales y útiles. Descubre la funcionalidad y la potencia de **Enma** para llevar tu servidor a un nivel superior. 🌟
 
-<a href="https://github.com/zGonzq/EnmaV2" target="_blank" class="rounded inline-flex items-center px-5 py-2.5 me-2 mb-2 bg-primary-light dark:bg-primary-dark text-white hover:opacity-90 hover:bg-primary dark:hover:bg-primary no-underline transition-transform transform hover:scale-105" rel="noopener noreferrer">
+<a href="https://github.com/zGonzq/EnmaV3" target="_blank" class="rounded inline-flex items-center px-5 py-2.5 me-2 mb-2 bg-primary-light dark:bg-primary-dark text-white hover:opacity-90 hover:bg-primary dark:hover:bg-primary no-underline transition-transform transform hover:scale-105" rel="noopener noreferrer">
     <img src="/icons/redes/github.svg" alt="GitHub" width="20" class="mr-2 m-0">Ver en GitHub
 </a>

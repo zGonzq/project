@@ -33,6 +33,6 @@ Tuvimos algunos problemas para mostrar los datos en tiempo real en los gráficos
 
 **Sistema de temperatura** es un proyecto en constante mejora, asegurando que las empresas puedan monitorear las condiciones ambientales de manera eficiente y precisa. Descubre cómo **Sistema de temperatura** puede optimizar el monitoreo de tus plantas. 🌟
 
-<a href="https://github.com/zGonzq/EnmaV2" target="_blank" class="rounded inline-flex items-center px-5 py-2.5 me-2 mb-2 bg-primary-light dark:bg-primary-dark text-white hover:opacity-90 hover:bg-primary dark:hover:bg-primary no-underline transition-transform transform hover:scale-105" rel="noopener noreferrer">
+<a href="https://github.com/zGonzq/Sistema-TH" target="_blank" class="rounded inline-flex items-center px-5 py-2.5 me-2 mb-2 bg-primary-light dark:bg-primary-dark text-white hover:opacity-90 hover:bg-primary dark:hover:bg-primary no-underline transition-transform transform hover:scale-105" rel="noopener noreferrer">
     <img src="/icons/redes/github.svg" alt="GitHub" width="20" class="mr-2 m-0">Ver en GitHub
 </a>
