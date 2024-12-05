@@ -2,6 +2,7 @@
 import { TypewriterEffect } from './ui/TypewriterEffect';
 import Logo from './Logo.astro';
 import SocialMedia from './SocialMedia.astro';
+import JobStatus from './JobStatus';
 ---
 
 <section class="min-h-[85vh] flex flex-col items-center justify-center">
@@ -23,9 +24,7 @@ import SocialMedia from './SocialMedia.astro';
     </div>
   </div>
   <SocialMedia class="mt-8" />
-  <div class="flex justify-center items-center w-[226px] h-[46px] rounded-full text-sm font-normal hover:scale-105 bg-primary-light hover:text-white dark:bg-primary-dark hover:bg-primary dark:hover:bg-primary transition-all duration-300 ">
-    <p>Disponible para trabajar</p>
-  </div>
+  <JobStatus client:load />
 
 
 </section>

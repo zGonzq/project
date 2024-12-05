@@ -15,7 +15,14 @@ const { Content } = await project.render();
 ---
 
 <Layout title={`${project.data.title} - Gonzalo Leal`}>
+
   <article class="max-w-3xl mx-auto prose dark:prose-invert">
+    <a href="/" class="btn btn-primary no-underline flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+      <span>Volver atrás</span>
+    </a>
     <h1>{project.data.title}</h1>
     <Content />
   </article>

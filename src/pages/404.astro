@@ -2,9 +2,19 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="404 - Gonzalo Leal">
-    <section class="container mx-auto px-4 py-24 text-center">
-        <h1 class="text-6xl font-bold text-gray-900 dark:text-white">404</h1>
-        <p class="text-xl text-gray-600 dark:text-gray-400">Parece que te has perdido, vuelve al <a href="/" class="text-primary hover:underline transition-colors">inicio</a>.</p>
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="zGonzq | Pagina no encontrada">
+    <section class="flex items-center justify-center flex-grow">
+        <div class="items-center py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+            <div class="mx-auto max-w-screen-sm text-center">
+                <h1 class="mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl text-[#F91362]">404</h1>
+                <p class="mb-4 text-3xl tracking-tight font-bold text-[#F91362] md:text-4xl ">¿Aquí falta algo?</p>
+                <p class="mb-4 text-lg font-light text-black dark:text-white">Lo sentimos, no podemos encontrar esa página. Ve a la pagina de inicio para seguir viendo contenido.</p>
+                <a href="/" class="inline-flex text-[#F91362] font-bold rounded-lg text-sm px-5 py-2.5 text-center my-4 hover:bg-[#F91362] texto-degradado hover:text-white transition-colors">Volver al menú de inicio</a>
+            </div>   
+        </div>
     </section>
 </Layout>

@@ -5,11 +5,9 @@ export default function ThemeToggle() {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   useEffect(() => {
-    // On mount, read initial theme
     const isDark = document.documentElement.classList.contains('dark');
     setTheme(isDark ? 'dark' : 'light');
 
-    // Listen for theme changes
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (mutation.attributeName === 'class') {
@@ -37,7 +35,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary rounded-lg text-sm p-2.5"
+      className="hover:text-primary dark:hover:text-primary rounded-lg text-sm p-2.5 text-gray-600 dark:text-gray-400 transition-all duration-300"
       aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
     >
       <svg

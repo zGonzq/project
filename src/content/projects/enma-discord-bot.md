@@ -5,59 +5,30 @@ tags: ['discord', 'bot']
 githubUrl: https://github.com/zGonzq/EnmaV2
 ---
 
-![Enma discord bot](/img/projects/enma-discord-bot.webp)
-Enma se presenta como un bot multifuncional diseñado meticulosamente para proporcionar una gestión eficiente y una experiencia enriquecedora en tu servidor de Discord. Sus características avanzadas abarcan desde la moderación rigurosa hasta funciones de entretenimiento y utilidad.
+<p>
+<img src="/img/projects/enma-discord-bot.webp" alt="Enma discord bot" width="350" style="border-radius: 15px; float:left; margin-right: 10px;">
+</p>
 
-⚜ Sistema de Moderación Avanzada:
-Enma ofrece un sistema de moderación avanzada, asegurando un ambiente seguro y ordenado en tu servidor mediante el control de mensajes inapropiados y la gestión de usuarios disruptivos.
+**Enma** es un bot multifuncional para Discord que desarrollé con el objetivo de profundizar en la lógica de los bots de Discord y reforzar mi conocimiento en **JavaScript**. Este proyecto no solo me permitió mejorar mis habilidades de programación, sino también explorar diversas tecnologías y APIs para crear una herramienta completa y versátil para la gestión de servidores de Discord.
 
-🎫 Sistema de Tickets:
-Facilita la resolución de problemas y consultas con un sistema de tickets integrado, permitiendo a los administradores manejar eficientemente las interacciones con los usuarios.
+Para el desarrollo de **Enma**, utilicé **JavaScript** como lenguaje principal debido a su flexibilidad y amplia adopción en el desarrollo de bots. La base de datos de **Enma** está gestionada con **MongoDB**, lo que permite un almacenamiento eficiente y escalable de datos, como configuraciones de usuario y estadísticas del servidor. La interacción con Discord se maneja a través de **Discord.js**, una potente biblioteca que facilita la creación de bots y la integración con la plataforma de Discord.
 
-💵 Sistema de Economía:
-Fomenta la participación y la interacción con el sistema de economía, permitiendo a los usuarios involucrarse en actividades económicas dentro del servidor.
+**Enma** incorpora varias **APIs** para ampliar su funcionalidad. Por ejemplo, la integración de **APIs de clima** permite a los usuarios obtener información meteorológica actualizada directamente en su servidor. Además, **Enma** utiliza la **API de juegos como osu!** para proporcionar estadísticas y datos relevantes a los jugadores. También se han integrado otras **APIs**, como las de películas, para ofrecer información y recomendaciones de entretenimiento.
 
-🎈 Sistema de Bienvenida, Despedida, Userautorole y Botautorole:
-Proporciona una experiencia de bienvenida personalizada mediante sistemas que asignan roles automáticamente, facilitando la integración de nuevos miembros.
+Entre las características destacadas de **Enma** se encuentran:
 
-🟢 Sistema de Autoroles Avanzado:
-Permite a los miembros personalizar su experiencia mediante un sistema de autorroles avanzado que asigna roles específicos según sus preferencias.
+- **Sistema de Moderación Avanzada**: Asegura un ambiente seguro y ordenado mediante el control de mensajes inapropiados y la gestión de usuarios disruptivos.
+- **Sistema de Tickets**: Facilita la resolución de problemas y consultas con un sistema de tickets integrado.
+- **Sistema de Economía**: Fomenta la participación y la interacción mediante actividades económicas dentro del servidor.
+- **Sistema de Bienvenida y Despedida**: Proporciona una experiencia personalizada mediante sistemas que asignan roles automáticamente.
+- **Sistema de Autoroles Avanzado**: Permite a los miembros personalizar su experiencia asignando roles específicos según sus preferencias.
+- **Sistema AFK de Usuarios**: Gestiona la comunicación durante períodos de inactividad para evitar la pérdida de mensajes importantes.
+- **Sistema de Encuestas y Sugerencias**: Fomenta la participación y la toma de decisiones colaborativas mediante encuestas y un canal dedicado para sugerencias.
+- **Sistema de Autocreación de Colores de Discord o Arcoíris**: Añade un toque estético personalizado con la capacidad de autocrear colores de Discord.
+- **Comandos Interactivos de Anime y Utilidad**: Ofrece entretenimiento y funciones útiles con comandos variados, como clima, serverinfo, aboutme, userinfo, osu y otros.
 
-🖥 Sistema AFK de Usuarios:
-Evita la pérdida de mensajes importantes cuando los usuarios están ausentes mediante un sistema AFK que gestiona la comunicación durante períodos de inactividad.
+**Enma** está en constante desarrollo, actualizándose regularmente con nuevas funcionalidades para asegurar que los servidores de Discord estén siempre equipados con las herramientas más actuales y útiles. Descubre la funcionalidad y la potencia de **Enma** para llevar tu servidor a un nivel superior. 🌟
 
-🔎 Sistema de Encuestas:
-Fomenta la participación y la toma de decisiones colaborativas con un sistema de encuestas estructurado para recopilar opiniones y preferencias.
-
-👍 Sistema de Sugerencias:
-Ofrece un canal dedicado para sugerencias y comentarios, promoviendo la retroalimentación constructiva y la mejora continua del servidor.
-
-🌈 Sistema de Autocreación de Colores de Discord o Arcoíris:
-Añade un toque estético personalizado con la capacidad de autocrear colores de Discord o un esquema de arcoíris único.
-
-🔢 Sistema de Conteo:
-Facilita la organización de eventos y actividades con un sistema de conteo que permite un seguimiento preciso.
-
-🎉 Sistema de Cumpleaños:
-Celebra momentos especiales reconociendo y festejando los cumpleaños de los miembros con un sistema dedicado.
-
-🗺 Comandos Interactivos de Anime:
-Satisface los intereses de la comunidad con comandos interactivos relacionados con el anime para entretenimiento variado.
-
-🚀 Comandos de Utilidad:
-Ofrece información instantánea y funciones útiles con comandos variados, como clima, serverinfo, aboutme, userinfo, osu y otros.
-
-▶ Sistema de Niveles:
-Motiva la participación con un sistema de niveles que recompensa la actividad y contribución constante de los miembros.
-
-😎 Comandos de Diversión:
-Mantiene un ambiente ligero con comandos de diversión como rps, 8ball, meme, brindando momentos de entretenimiento para la comunidad.
-
-🚦 Comandos Contextos:
-Simplifica la gestión del servidor con comandos contextuales para una administración más eficaz.
-
-🤖 Sistema de Auto-Moderación Multiguild:
-Prioriza la seguridad del servidor con un sistema de auto-moderación activable, proporcionando herramientas efectivas para mantener un ambiente seguro y controlado.
-
-En constante desarrollo, Enma se actualiza regularmente con nuevas funcionalidades para asegurar que tu servidor de Discord esté siempre equipado con las herramientas más actuales y útiles. Descubre la funcionalidad y la potencia de Enma para llevar tu servidor a un nivel superior. 🌟
-
+<a href="https://github.com/zGonzq/EnmaV2" target="_blank" class="rounded inline-flex items-center px-5 py-2.5 me-2 mb-2 bg-primary-light dark:bg-primary-dark text-white hover:opacity-90 hover:bg-primary dark:hover:bg-primary no-underline transition-transform transform hover:scale-105" rel="noopener noreferrer">
+    <img src="/icons/redes/github.svg" alt="GitHub" width="20" class="mr-2 m-0">Ver en GitHub
+</a>
