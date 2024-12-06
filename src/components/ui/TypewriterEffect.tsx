@@ -11,31 +11,44 @@ export const TypewriterEffect = ({
   cursorClassName?: string;
 }) => {
   const [currentText, setCurrentText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [wordIndex, setWordIndex] = useState(0);
+  const [colorIndex, setColorIndex] = useState(0);
+  const colors = ["primary"];
 
   useEffect(() => {
-    const word = words[0];
-    let currentIndex = 0;
+    const word = words[wordIndex];
+    let currentIndex = isDeleting ? word.length : 0;
 
     const intervalId = setInterval(() => {
-      if (currentIndex <= word.length) {
+      if (!isDeleting && currentIndex <= word.length) {
         setCurrentText(word.slice(0, currentIndex));
         currentIndex++;
+      } else if (isDeleting && currentIndex >= 0) {
+        setCurrentText(word.slice(0, currentIndex));
+        currentIndex--;
       } else {
-        clearInterval(intervalId);
+        if (!isDeleting) {
+          setIsDeleting(true);
+        } else {
+          setIsDeleting(false);
+          setWordIndex((prev) => (prev + 1) % words.length);
+          setColorIndex((prev) => (prev + 1) % colors.length);
+        }
       }
     }, 100);
 
     return () => clearInterval(intervalId);
-  }, [words]);
+  }, [words, wordIndex, isDeleting]);
 
   return (
     <div className="inline-flex items-center">
-      <span className={className}>{currentText}</span>
+      <span className={`${className} text-${colors[colorIndex]}`}>{currentText}</span>
       <motion.span
         initial={{ opacity: 0 }}
         animate={{ opacity: [0, 1, 0] }}
         transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
-        className={`block rounded-sm w-[4px]  h-4 sm:h-6 xl:h-12 bg-primary ${cursorClassName}`}
+        className={`block rounded-sm w-[4px] h-4 sm:h-6 xl:h-12 bg-${colors[colorIndex]} ${cursorClassName}`}
       />
     </div>
   );
