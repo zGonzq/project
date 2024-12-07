@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Github } from '../icons/Github';
+import { a } from 'framer-motion/client';
 
 interface ProjectCardProps {
   title: string;
@@ -18,7 +19,7 @@ export default function ProjectCard({ title, description, tags, githubUrl, slug,
       transition={{ duration: 0.5 }}
       className="group relative bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
     >
-      
+      <a href={`/projects/${slug}`} className="group relative bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
       <div className="aspect-video overflow-hidden">
         <img 
           src={image} 
@@ -49,14 +50,16 @@ export default function ProjectCard({ title, description, tags, githubUrl, slug,
             <Github className="w-5 h-5" />
             GitHub
           </a>
-          <a
+          {/* <a
             href={`/projects/${slug}`}
             className="px-4 py-2 bg-primary hover:bg-primary-light dark:hover:bg-primary-dark text-white rounded-full transition-color"
           >
             Ver más
-          </a>
+          </a> */}
         </div>
       </div>
+      </a>
     </motion.div>
+
   );
 }

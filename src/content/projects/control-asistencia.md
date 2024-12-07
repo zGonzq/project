@@ -35,7 +35,3 @@ Uno de los problemas que enfrentamos en este proyecto fue que el archivo `.env` 
 - **PM2**: Para mantener los scripts en ejecución.
 
 **Control de asistencia** es un proyecto en constante mejora, asegurando que las empresas puedan gestionar la asistencia de sus empleados de manera eficiente y precisa. Descubre cómo **Control de asistencia** puede optimizar la gestión de tu empresa. 🌟
-
-<a href="https://github.com/zGonzq/EnmaV2" target="_blank" class="rounded inline-flex items-center px-5 py-2.5 me-2 mb-2 bg-primary-light dark:bg-primary-dark text-white hover:opacity-90 hover:bg-primary dark:hover:bg-primary no-underline transition-transform transform hover:scale-105" rel="noopener noreferrer">
-    <img src="/icons/redes/github.svg" alt="GitHub" width="20" class="mr-2 m-0">Ver en GitHub
-</a>

@@ -6,7 +6,7 @@ githubUrl: https://github.com/zGonzq/EnmaV3
 ---
 
 <p>
-<img src="/img/projects/enma-discord-bot.webp" alt="Enma discord bot" width="350" style="border-radius: 15px; float:left; margin-right: 10px;">
+<img src="/img/projects/enma-discord-bot.webp" alt="Enma discord bot" width="350" class="hover:scale-95 transition-all hover:opacity-90" style="border-radius: 15px; float:left; margin-right: 10px;">
 </p>
 
 **Enma** es un bot multifuncional para Discord que desarrollé con el objetivo de profundizar en la lógica de los bots de Discord y reforzar mi conocimiento en **JavaScript**. Este proyecto no solo me permitió mejorar mis habilidades de programación, sino también explorar diversas tecnologías y APIs para crear una herramienta completa y versátil para la gestión de servidores de Discord.
@@ -27,8 +27,11 @@ Entre las características destacadas de **Enma** se encuentran:
 - **Sistema de Autocreación de Colores de Discord o Arcoíris**: Añade un toque estético personalizado con la capacidad de autocrear colores de Discord.
 - **Comandos Interactivos de Anime y Utilidad**: Ofrece entretenimiento y funciones útiles con comandos variados, como clima, serverinfo, aboutme, userinfo, osu y otros.
 
-**Enma** está en constante desarrollo, actualizándose regularmente con nuevas funcionalidades para asegurar que los servidores de Discord estén siempre equipados con las herramientas más actuales y útiles. Descubre la funcionalidad y la potencia de **Enma** para llevar tu servidor a un nivel superior. 🌟
+**Enma** está en constante desarrollo, actualizándose regularmente con nuevas funcionalidades para asegurar que los servidores de Discord estén siempre equipados con las herramientas más actuales y útiles. Descubre la funcionalidad y la potencia de **Enma** para llevar tu servidor a un nivel superior.
 
-<a href="https://github.com/zGonzq/EnmaV3" target="_blank" class="rounded inline-flex items-center px-5 py-2.5 me-2 mb-2 bg-primary-light dark:bg-primary-dark text-white hover:opacity-90 hover:bg-primary dark:hover:bg-primary no-underline transition-transform transform hover:scale-105" rel="noopener noreferrer">
-    <img src="/icons/redes/github.svg" alt="GitHub" width="20" class="mr-2 m-0">Ver en GitHub
+<a href="https://github.com/zGonzq/EnmaV3" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-5 py-2.5 me-2 mb-2 hover:scale-105 gap-2 bg-gray-800 dark:bg-gray-700 text-white rounded-full hover:opacity-90 transition-all no-underline">
+    <img src="/icons/redes/github.svg" alt="GitHub" width="20" class="mr-2 m-0">GitHub
+</a>
+<a href="https://discord.com/oauth2/authorize?client_id=1171876289632813148&permissions=8&scope=applications.commands%20bot" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-5 py-2.5 me-2 mb-2 hover:scale-105 gap-2 bg-gray-800 dark:bg-gray-700 text-white rounded-full hover:opacity-90 transition-all no-underline">
+    <img src="/icons/redes/discord.svg" alt="Discord" width="20" class="mr-2 m-0">Invite
 </a>

@@ -13,8 +13,6 @@ export const TypewriterEffect = ({
   const [currentText, setCurrentText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [wordIndex, setWordIndex] = useState(0);
-  const [colorIndex, setColorIndex] = useState(0);
-  const colors = ["primary"];
 
   useEffect(() => {
     const word = words[wordIndex];
@@ -33,7 +31,6 @@ export const TypewriterEffect = ({
         } else {
           setIsDeleting(false);
           setWordIndex((prev) => (prev + 1) % words.length);
-          setColorIndex((prev) => (prev + 1) % colors.length);
         }
       }
     }, 100);
@@ -43,12 +40,12 @@ export const TypewriterEffect = ({
 
   return (
     <div className="inline-flex items-center">
-      <span className={`${className} text-${colors[colorIndex]}`}>{currentText}</span>
+      <span className={`${className} text-gray-900`}>{currentText}</span>
       <motion.span
         initial={{ opacity: 0 }}
         animate={{ opacity: [0, 1, 0] }}
         transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
-        className={`block rounded-sm w-[4px] h-4 sm:h-6 xl:h-12 bg-${colors[colorIndex]} ${cursorClassName}`}
+        className={`block rounded-sm w-[4px] h-4 sm:h-6 xl:h-12 bg-primary ${cursorClassName}`}
       />
     </div>
   );
