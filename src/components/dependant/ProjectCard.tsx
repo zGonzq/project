@@ -19,7 +19,7 @@ export default function ProjectCard({ title, description, tags, githubUrl, slug,
       transition={{ duration: 0.5 }}
       className="group relative bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
     >
-      <a href={`/projects/${slug}`} className="group relative bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+      <a href={`/projects/${slug}`} className="group relative bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300" aria-label={title}>
       <div className="aspect-video overflow-hidden">
         <img 
           src={image} 
