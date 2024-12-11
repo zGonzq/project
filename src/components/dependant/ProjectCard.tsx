@@ -25,6 +25,7 @@ export default function ProjectCard({ title, description, tags, githubUrl, slug,
           src={image} 
           alt={title} 
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+          loading='lazy'
         />
       </div>
       <div className="p-6">
