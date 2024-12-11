@@ -4,6 +4,7 @@ import { cn } from "../../utils/cn";
 interface Technology {
   name: string;
   icon: string;
+  description: string;
 }
 
 interface InfiniteMovingCardsProps {
@@ -41,17 +42,22 @@ export const InfiniteMovingCards = ({
         )}
       >
         {duplicatedItems.map((item, idx) => (
-          <div
+            <div
             key={idx}
-            className="flex-shrink-0 w-[150px] rounded-xl border border-slate-700/30 px-8 py-6 bg-white/5 backdrop-blur-sm hover:bg-primary transition-colors"  
-          >
-            <div className="flex justify-center text-4xl">
+            className="flex-shrink-0 w-[300px] rounded-xl border border-slate-700/30 px-8 py-6 bg-white/5 backdrop-blur-sm transition-transform transform hover:scale-105 shadow-md hover:shadow-lg flex items-center select-none"  
+            >
+              <div className="flex justify-center text-4xl mr-4">
               <img src={item.icon} alt={item.name} className="h-12 w-12" />
-            </div>
-            <div className="text-center mt-4 text-sm font-medium text-black dark:text-white">
+              </div>
+              <div>
+              <div className="text-sm font-medium text-black dark:text-white">
               {item.name}
+              </div>
+              <div className="text-xs text-gray-500 dark:text-gray-400 mt-2">
+              {item.description}
+              </div>
+              </div>
             </div>
-          </div>
         ))}
       </div>
     </div>

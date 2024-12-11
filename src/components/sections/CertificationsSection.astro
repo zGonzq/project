@@ -40,20 +40,22 @@ const certifications = [
     <SectionTitle title="Certificaciones" icon="/icons/titles/certificate.svg" />
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
       {certifications.map((cert) => (
-        <AnimatedCard client:visible className="group bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-          <div class="flex items-center gap-4">
-      <div class="w-16 h-16 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-xl overflow-hidden group-hover:scale-110 transition-transform">
-        <img src={cert.logo} alt={cert.provider} class="w-full h-full object-cover" />
+        <div class="flex gap-4 p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-105">
+          <div class="relative flex h-10 w-10 flex-none items-center justify-center rounded-lg shadow-sm shadow-zinc-600/50 ring-1 ring-zinc-900/5 dark:ring-0">
+            <img src={cert.logo} alt={cert.provider} class="w-12 rounded-full object-cover" />
+          </div>
+          <div class="flex flex-col gap-y-1">
+            <div class="text-base font-semibold tracking-tight text-gray-900 dark:text-white">{cert.title}</div>
+            <div class="text-pretty text-sm text- font-medium">
+              <p class="dark:text-gray-400 text-gray-900">{cert.providerName}</p>
             </div>
-            <div>
-              <h3 class="text-lg font-bold text-gray-900 dark:text-white">{cert.title}</h3>
-              <p class="text-gray-600 dark:text-gray-300">{cert.providerName}</p>
-              <span class="inline-block px-3 py-1 mt-2 text-sm text-primary bg-primary/10 rounded-full">
+            <div class="flex">
+              <span class="inline-block px-2 py-0.5 mt-1 text-sm text-primary bg-primary/10 rounded-full">
                 {cert.date}
               </span>
             </div>
           </div>
-        </AnimatedCard>
+        </div>
       ))}
     </div>
   </div>
