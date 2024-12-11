@@ -44,7 +44,7 @@ export const InfiniteMovingCards = ({
         {duplicatedItems.map((item, idx) => (
             <div
             key={idx}
-            className="flex-shrink-0 w-[300px] rounded-xl border border-slate-700/30 px-8 py-6 bg-white/5 backdrop-blur-sm transition-transform transform hover:scale-105 shadow-md hover:shadow-lg flex items-center select-none"  
+            className="flex-shrink-0 w-[300px] rounded-xl  px-8 py-6 bg-white/5 backdrop-blur-sm transition-transform transform hover:scale-105 shadow-md hover:shadow-lg flex items-center select-none"  
             >
               <div className="flex justify-center text-4xl mr-4">
               <img src={item.icon} alt={item.name} className="h-12 w-12" />
