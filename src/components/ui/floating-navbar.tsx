@@ -17,6 +17,10 @@ export const FloatingNav = () => {
       link: "/projects",
     },
     {
+      name: "Certificaciones",
+      link: "/certifications",
+    },
+    {
       name: "Sobre mí",
       link: "/about",
     },
