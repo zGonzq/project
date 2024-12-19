@@ -1,12 +1,11 @@
 import { motion } from 'framer-motion';
 import { Github } from '../icons/Github';
-import { a } from 'framer-motion/client';
 
 interface ProjectCardProps {
   title: string;
   description: string;
   tags: string[];
-  githubUrl: string;
+  githubUrl?: string; // Hacemos que githubUrl sea opcional
   slug: string;
   image: string;
 }
@@ -42,19 +41,20 @@ export default function ProjectCard({ title, description, tags, githubUrl, slug,
           ))}
         </div>
         <div className="flex gap-3">
-          <a
-            href={githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 bg-gray-900 dark:bg-gray-700 text-white rounded-full hover:opacity-90 transition-opacity"
-          >
-            <Github className="w-5 h-5" />
-            GitHub
-          </a>
+          {githubUrl && (
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 bg-gray-900 dark:bg-gray-700 text-white rounded-full hover:opacity-90 transition-opacity"
+            >
+              <Github className="w-5 h-5" />
+              GitHub
+            </a>
+          )}
         </div>
       </div>
       </a>
     </motion.div>
-
   );
 }
