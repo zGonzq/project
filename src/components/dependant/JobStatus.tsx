@@ -6,7 +6,7 @@ const JobStatus = () => {
   return (
     <div className="flex justify-center items-center">
       <button
-        className="relative flex justify-center items-center w-[226px] h-[46px] rounded-full text-sm font-semibold border-2 text-gray-600 dark:border-gray-800 dark:text-gray-400 transition-all duration-300 hover:bg-primary"
+        className="relative flex justify-center items-center w-[226px] h-[46px] rounded-full text-sm font-semibold border-2 text-gray-600 dark:border-gray-800 dark:text-gray-400 transition-all  hover:scale-105"
         disabled
       >
         <span className="relative">
