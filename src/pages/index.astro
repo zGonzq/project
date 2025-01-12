@@ -7,14 +7,27 @@ import ExperienceSection from '../components/sections/ExperienceSection.astro';
 import CertificationsSection from '../components/sections/CertificationsSection.astro';
 import EducationSection from '../components/sections/EducationSection.astro';
 import FaqSection from '../components/sections/FaqSection.astro';
+import ZoomSection from '../components/ui/ParallaxSection';
 ---
 
 <Layout title=" Portfolio - Gonzalo Leal">
   <HeroSection />
-  <TechStack />
-  <ProjectsSection />
-  <ExperienceSection />
-  <CertificationsSection />
-  <EducationSection />
-  <FaqSection />
+  <ZoomSection client:load>
+    <TechStack />
+  </ZoomSection>
+  <ZoomSection client:load delay={0.2}>
+    <ProjectsSection />
+  </ZoomSection>
+  <ZoomSection client:load delay={0.3}>
+    <ExperienceSection />
+  </ZoomSection>
+  <ZoomSection client:load delay={0.4}>
+    <CertificationsSection />
+  </ZoomSection>
+  <ZoomSection client:load delay={0.5}>
+    <EducationSection />
+  </ZoomSection>
+  <ZoomSection client:load delay={0.6}>
+    <FaqSection />
+  </ZoomSection>
 </Layout>

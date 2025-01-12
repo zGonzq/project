@@ -20,7 +20,6 @@ const experiences = [
       <div class="relative space-y-12">
         <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-700"></div>
         {experiences.map((experience) => (
-          <AnimatedCard client:visible>
             <div class="relative flex items-start group">
               <div class="absolute left-0 top-0 w-16 h-16 flex items-center justify-center ">
                 <div class="w-4 h-4 rounded-full bg-primary group-hover:scale-125 transition-transform"></div>
@@ -35,7 +34,6 @@ const experiences = [
               </div>
               
             </div>
-          </AnimatedCard>
         ))}
       </div>
     </div>
