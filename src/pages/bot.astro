@@ -1,0 +1,463 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SectionTitle from "../components/sections/SectionTitle.astro";
+
+const response = await fetch("http://144.22.50.244:3000/api/stats").catch((err) =>
+    console.error("Error fetching bot stats:", err)
+);
+const stats = response ? await response.json() : { servers: 0, users: 0, channels: 0 };
+
+const features = [
+  {
+    title: "Economía",
+    description:
+      "Sistema completo de economía con múltiples formas de ganar monedas",
+    commands: [
+      "balance",
+      "daily",
+      "mine",
+      "pay",
+      "rob",
+      "shop",
+      "buy",
+      "work",
+      "miniwork",
+      "coinflip",
+      "crime",
+      "fish",
+    ],
+  },
+  {
+    title: "Moderación",
+    description: "Herramientas esenciales para mantener tu servidor seguro",
+    commands: [
+      "timeout",
+      "clear",
+      "kick",
+      "ban",
+      "unban",
+      "warn",
+      "history",
+      "cleanhistory",
+      "slowmode",
+      "lock",
+      "unlock",
+      "purge",
+      "nick",
+      "unwarn",
+    ],
+  },
+  {
+    title: "Diversión",
+    description: "Comandos para entretener a los usuarios",
+    commands: ["8ball", "rps", "rng"],
+  },
+  {
+    title: "Integraciones",
+    description: "Conecta con tus servicios favoritos",
+    commands: [
+      "osu",
+      "findanime",
+      "randomanime",
+      "findpokemon",
+      "weather",
+      "notifications",
+    ],
+  },
+  {
+    title: "Utilidades",
+    description: "Comandos útiles para la gestión del servidor",
+    commands: ["help", "feedback", "todo", "embed", "emoji", "cumpleanos"],
+  },
+  {
+    title: "Administración",
+    description: "Herramientas avanzadas para la administración del servidor",
+    commands: [
+      "setshop",
+      "giveall",
+      "logs",
+      "welcomemsg",
+      "autorole",
+      "automoderator",
+    ],
+  },
+  {
+    title: "General",
+    description: "Comandos generales para el bot",
+    commands: ["invite", "ping", "emojilist"],
+  },
+  {
+    title: "Automáticos",
+    description: "Comandos automáticos para el bot",
+    commands: ["dailyanime"],
+  },
+];
+---
+
+<Layout title="Enma Bot - Discord">
+  <!-- Hero Section -->
+  <section class="py-5 text-white bg-[#5865F2] rounded-2xl">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <img
+          src="/icons/logo.webp"
+          alt="Enma Bot Logo"
+          class="size-32 mx-auto mb-6 rounded-full"
+        />
+        <h1 class="text-6xl font-bold mb-6 text-white">Enma Discord Bot</h1>
+        <p class="text-xl mb-8 text-white/90">
+          Un bot multifuncional para hacer tu servidor más divertido y fácil de
+          administrar
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="https://discord.com/oauth2/authorize?client_id=TU_CLIENT_ID&permissions=8&scope=applications.commands%20bot"
+            class="px-8 py-3 bg-white text-[#5865F2] rounded-full font-bold hover:scale-105 transition-all flex items-center gap-2"
+          >
+            <img src="/icons/redes/discord.svg" alt="Discord" class="w-6 h-6" />
+            Invitar a Enma
+          </a>
+          <a
+            href="#features"
+            class="px-8 py-3 border-2 border-white text-white rounded-full font-bold hover:bg-white hover:text-[#5865F2] transition-all"
+          >
+            Ver características
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <SectionTitle title="Estadísticas" icon="/icons/titles/stats.svg" />
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto justify-center"
+      >
+        {
+          stats && (
+            <>
+              <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all hover:scale-105">
+                <div class="flex items-center justify-center w-12 h-12 bg-[#5865F2]/10 rounded-full mb-4">
+                  <svg
+                    class="w-6 h-6 text-[#5865F2]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                  Servidores
+                </h3>
+                <p class="text-4xl font-bold text-[#5865F2]">{stats.servers}</p>
+              </div>
+
+              <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all hover:scale-105">
+                <div class="flex items-center justify-center w-12 h-12 bg-[#5865F2]/10 rounded-full mb-4">
+                  <svg
+                    class="w-6 h-6 text-[#5865F2]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                  Usuarios
+                </h3>
+                <p class="text-4xl font-bold text-[#5865F2]">{stats.users}</p>
+              </div>
+
+              <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all hover:scale-105">
+                <div class="flex items-center justify-center w-12 h-12 bg-[#5865F2]/10 rounded-full mb-4">
+                  <svg
+                    class="w-6 h-6 text-[#5865F2]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 4h16M4 8h16M4 12h16M4 16h16M4 20h16"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                  Canales
+                </h3>
+                <p class="text-4xl font-bold text-[#5865F2]">
+                  {stats.channels}
+                </p>
+              </div>
+            </>
+          )
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-20">
+    <div class="container mx-auto px-4">
+      <SectionTitle
+        title="Características principales"
+        icon="/icons/titles/features.svg"
+      />
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {
+          features.map((feature) => (
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all hover:scale-105">
+              <h3 class="text-xl font-bold text-[#5865F2] mb-4">
+                {feature.title}
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                {feature.description}
+              </p>
+              <div class="flex flex-wrap gap-2">
+                {feature.commands.map((cmd) => (
+                  <span class="px-3 py-1 bg-[#5865F2]/10 text-[#5865F2] rounded-full text-sm">
+                    /{cmd}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Integration Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <SectionTitle title="APIs Integradas" icon="/icons/titles/api.svg" />
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div
+          class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all hover:scale-105"
+        >
+          <h3 class="text-xl font-bold text-[#5865F2] mb-4">osu! API</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            Para obtener estadísticas de usuarios de osu!
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all hover:scale-105"
+        >
+          <h3 class="text-xl font-bold text-[#5865F2] mb-4">Trace.moe API</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            Para buscar información de anime a partir de una imagen.
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all hover:scale-105"
+        >
+          <h3 class="text-xl font-bold text-[#5865F2] mb-4">Jikan API</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            Para obtener información de anime.
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all hover:scale-105"
+        >
+          <h3 class="text-xl font-bold text-[#5865F2] mb-4">PokeAPI</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            Para obtener información de Pokémon.
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all hover:scale-105"
+        >
+          <h3 class="text-xl font-bold text-[#5865F2] mb-4">
+            OpenWeatherMap API
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            Para obtener información del clima.
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all hover:scale-105"
+        >
+          <h3 class="text-xl font-bold text-[#5865F2] mb-4">Twitch API</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            Para obtener información de streams.
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all hover:scale-105"
+        >
+          <h3 class="text-xl font-bold text-[#5865F2] mb-4">YouTube API</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            Para obtener información de vídeos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <SectionTitle title="Creador" icon="/icons/titles/creator.svg" />
+      <div class="max-w-md mx-auto">
+        <div
+          class="bg-[#2B2D31] rounded-xl p-6 shadow-lg hover:shadow-xl transition-all"
+        >
+          <div id="discord-card" class="animate-pulse">
+            <!-- El contenido se cargará vía JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const DISCORD_ID = "944060279082340433";
+    const card = document.getElementById("discord-card");
+
+    async function updatePresence() {
+      try {
+        const response = await fetch(
+          `https://api.lanyard.rest/v1/users/${DISCORD_ID}`
+        );
+        const data = await response.json();
+        const { data: presence } = data;
+
+        if (!presence) return;
+
+        const status = {
+          online: { color: "bg-green-500", text: "En línea" },
+          idle: { color: "bg-yellow-500", text: "Ausente" },
+          dnd: { color: "bg-red-500", text: "No molestar" },
+          offline: { color: "bg-gray-500", text: "Desconectado" },
+        };
+
+const formatActivityTime = (timestamps: { start?: number | string }) => {
+    if (!timestamps?.start) return "";
+    
+    const start = new Date(Number(timestamps.start)).getTime();
+    const now = new Date().getTime();
+    const diff = Math.abs(now - start);
+    
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    
+    const parts = [];
+    
+    if (days > 0) parts.push(`${days}d`);
+    if (hours > 0) parts.push(`${hours}h`);
+    if (minutes > 0) parts.push(`${minutes}m`);
+    
+    return parts.join(' ') || '1m';
+};
+
+        const currentStatus = status[presence.discord_status] || status.offline;
+        // Formatear actividad de Spotify
+        const spotifyActivity = presence.spotify
+          ? `
+                <div class="mt-4 p-3 bg-[#1DB954]/10 rounded-lg">
+                    <div class="flex items-center gap-3">
+                        <img src="${presence.spotify.album_art_url}" class="w-12 h-12 rounded" alt="Album Art">
+                        <div class="overflow-hidden">
+                            <p class="text-[#1DB954] font-medium text-sm">Escuchando Spotify</p>
+                            <p class="text-white text-sm truncate">${presence.spotify.song}</p>
+                            <p class="text-gray-400 text-xs truncate">por ${presence.spotify.artist}</p>
+                        </div>
+                    </div>
+                </div>
+            `
+          : "";
+
+          card.innerHTML = `
+    <div class="flex flex-col gap-4">
+        <div class="flex items-start gap-4">
+            <a href="https://discord.com/users/${DISCORD_ID}" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="relative block">
+                <img src="https://cdn.discordapp.com/avatars/${DISCORD_ID}/${presence.discord_user.avatar}" 
+                     alt="Avatar" 
+                     class="w-24 h-24 rounded-full ring-2 ring-[#5865F2] transition-all hover:scale-105 hover:ring-4">
+                <div class="absolute bottom-0 right-0 w-6 h-6 ${currentStatus.color} rounded-full border-2 border-[#2B2D31]"></div>
+            </a>
+            <div class="flex-1">
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="font-bold text-white text-xl">${presence.discord_user.global_name}</span>
+                    <span class="text-gray-400">@${presence.discord_user.username}</span>
+                </div>
+                
+                ${presence.activities.find(a => a.type === 4) ? `
+                    <div class="flex items-center gap-2 text-gray-300 text-sm mb-3">
+                        ${presence.activities.find(a => a.type === 4).emoji ? 
+                            `<img src="https://cdn.discordapp.com/emojis/${presence.activities.find(a => a.type === 4).emoji.id}.png" 
+                                  class="w-4 h-4" alt="emoji">` : ''}
+                        ${presence.activities.find(a => a.type === 4).state}
+                    </div>
+                ` : ''} 
+
+                <div class="flex items-center gap-2 text-sm text-gray-400">
+                    <div class="w-2 h-2 ${currentStatus.color} rounded-full"></div>
+                    ${currentStatus.text}
+                </div>
+
+                ${presence.activities.find(a => a.type === 0) ? `
+                    <div class="mt-3 p-3 bg-[#36393F] rounded-lg">
+                        <div>
+                            <p class="text-gray-400 text-xs">Jugando a</p>
+                            <p class="text-white font-medium">${presence.activities.find(a => a.type === 0).name}</p>
+                            <p class="text-gray-400 text-xs mt-1">
+                                ${formatActivityTime(presence.activities.find(a => a.type === 0).timestamps)}
+                            </p>
+                        </div>
+                    </div>
+                ` : ''}
+            </div>
+        </div>
+    </div>
+`;
+        card.classList.remove("animate-pulse");
+      } catch (error) {
+        console.error("Error fetching Discord presence:", error);
+      }
+    }
+
+    updatePresence();
+    setInterval(updatePresence, 10000); // Actualizar cada 10 segundos
+  </script>
+
+  <section class="py-20">
+    <div class="container mx-auto px-4 text-center">
+      <div class="bg-[#5865F2] rounded-2xl p-12 max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6 text-white">
+          ¿Listo para mejorar tu servidor?
+        </h2>
+        <p class="text-xl mb-8 text-white/90">
+          Únete a miles de servidores que ya confían en Enma
+        </p>
+        <a
+          href="https://discord.com/oauth2/authorize?client_id=TU_CLIENT_ID&permissions=8&scope=applications.commands%20bot"
+          class="px-8 py-3 bg-white text-[#5865F2] rounded-full font-bold hover:scale-105 transition-all inline-flex items-center gap-2"
+        >
+          <img src="/icons/redes/discord.svg" alt="Discord" class="w-6 h-6" />
+          Añadir a Discord
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

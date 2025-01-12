@@ -24,6 +24,10 @@ export const FloatingNav = () => {
       name: "Sobre mí",
       link: "/about",
     },
+    {
+      name: "Enma",
+      link: "/bot",
+    },
   ];
 
   return (
