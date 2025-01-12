@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const JobStatus = () => {
-  const [isLookingForJob, setIsLookingForJob] = useState(false);
+  const [isLookingForJob, setIsLookingForJob] = useState(true);
 
   return (
     <div className="flex justify-center items-center">
