@@ -1,0 +1,37 @@
+---
+import SectionTitle from './SectionTitle.astro';
+import { FaqList } from '../dependant/FaqList';
+import { AnimatedCard } from '../ui/AnimatedCard';
+
+const faqs = [
+  {
+    id: 1,
+    question: "¿Qué tecnologías usas principalmente?",
+    answer: "Me especializo en JavaScript/TypeScript, Node.js, y bases de datos como MongoDB y MySQL."
+  },
+  {
+    id: 2,
+    question: "¿Estás disponible para proyectos freelance?",
+    answer: "Sí, estoy disponible para proyectos freelance. Contáctame para discutir tu proyecto."
+  },
+  {
+    id: 3,
+    question: "¿Cómo aprendiste programación?",
+    answer: "Comence a aprender programación web por un curso de BuenaOnda Talk gracias a una beca que me otorgaron en 2022. Desde entonces he estado aprendiendo y mejorando mis habilidades."
+  },
+  {
+    id: 4,
+    question: "¿Que me gusta hacer en mi tiempo libre?",
+    answer: "Me gusta jugar videojuegos y programar mi bot de Discord con la librería discord.js."
+  },
+];
+---
+
+<section class="py-20">
+  <AnimatedCard client:visible>
+  <div class="container mx-auto px-4">
+    <SectionTitle title="Preguntas Frecuentes" icon="/icons/titles/faq.svg" />
+    <FaqList client:load faqs={faqs} />
+  </div>
+  </AnimatedCard>
+</section>
