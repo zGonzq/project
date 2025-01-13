@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter, ViewTransitions } from 'astro:transitions';
 import  SpeedInsights  from "@vercel/speed-insights/astro"
 import Analytics from '@vercel/analytics/astro'
 import Footer from '../components/layout/Footer.astro';
@@ -59,7 +59,7 @@ const { title } = Astro.props;
 
     <meta content="#F91362" data-react-helmet="true" name="theme-color" />
     <title>{title}</title>
-    <ViewTransitions />
+    <ClientRouter />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
@@ -82,7 +82,7 @@ const { title } = Astro.props;
         <SpeedInsights/>
   </head>
   <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors flex flex-col min-h-screen">
-    <FloatingNav client:load />
+
     <ScrollProgress client:load/>
     <main class="container mx-auto px-4 pt-24 flex-grow">
       <slot />

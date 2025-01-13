@@ -4,32 +4,21 @@ import ThemeToggle from "../dependant/ThemeToggle";
 import { Logo } from "./Logo";
 import { FlipWords } from "./FlipWords";
 
-export const FloatingNav = () => {
+
+interface FloatingNavProps {
+  navItems: {
+    name: string;
+    link: string;
+  }[];
+  flipWords?: string[]; 
+}
+
+export const FloatingNav = ({ 
+  navItems, 
+  flipWords = ["Gonzalo Leal", "Web developer", "Graphic designer"]
+}: FloatingNavProps) => {
   const [isOpen, setIsOpen] = useState(false);
   
-  const navItems = [
-    {
-      name: "Inicio",
-      link: "/",
-    },
-    {
-      name: "Proyectos",
-      link: "/projects",
-    },
-    {
-      name: "Certificaciones",
-      link: "/certifications",
-    },
-    {
-      name: "Sobre mí",
-      link: "/about",
-    },
-    {
-      name: "Enma",
-      link: "/bot",
-    },
-  ];
-
   return (
     <nav className="fixed top-4 inset-x-4 max-w-2xl mx-auto z-50">
       <motion.div
@@ -40,7 +29,7 @@ export const FloatingNav = () => {
         {/* Logo and Brand */}
         <a href="/" className="flex items-center gap-2">
           <Logo className="w-8 h-8" />
-            <FlipWords words={["Gonzalo Leal", "Web developer", "Graphic designer"]} className="text-md font-semibold" />
+            <FlipWords words={flipWords} className="text-md font-semibold" />
         </a>
 
         {/* Desktop Navigation */}

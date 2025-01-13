@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import SectionTitle from "../components/sections/SectionTitle.astro";
+import { FloatingNav } from "../components/ui/floating-navbar";
+import { FaqList } from "../components/dependant/FaqList"
 
 const response = {
   servers: 7,
@@ -94,7 +96,27 @@ const features = [
     commands: ["dailyanime"],
   },
 ];
+
+const homeNavItems = [
+  { name: "Volver atras", link: "/" },
+
+];
+
+const faqs = [
+  {
+    id: 1,
+    question: "¿Que es Enma?",
+    answer: "Enma es un bot multifuncional para Discord que te ayudará a hacer tu servidor más divertido y fácil de administrar. Cuenta con comandos de economía, moderación, diversión, integraciones, utilidades, administración y más.",
+  },
+  {
+    id: 2,
+    question: "¿Cómo añado a Enma a mi servidor?",
+    answer: "Puedes añadir a Enma a tu servidor haciendo clic en el botón de 'Invitar a Enma' que se encuentra en la parte superior de esta página. Necesitarás permisos de administrador en el servidor para poder añadir a Enma.",
+  },
+]
 ---
+
+<FloatingNav navItems={homeNavItems} flipWords={["Enma", "Discord bot"]} client:load  />
 
 <Layout title="Enma Bot - Discord">
   <!-- Hero Section -->
@@ -104,26 +126,26 @@ const features = [
         <img
           src="/icons/logo.webp"
           alt="Enma Bot Logo"
-          class="size-32 mx-auto mb-6 rounded-full"
+          class="w-24 h-24 mx-auto mb-6 rounded-full"
         />
-        <h1 class="text-6xl font-bold mb-6 text-white">Enma</h1>
-        <p class="text-xl mb-8 text-white/90">
+        <h1 class="text-4xl sm:text-6xl font-bold mb-6 text-white">Enma</h1>
+        <p class="text-lg sm:text-xl mb-8 text-white/90">
           Un bot multifuncional para hacer tu servidor más divertido y fácil de
           administrar
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="https://discord.com/oauth2/authorize?client_id=1171876289632813148&permissions=8&integration_type=0&scope=bot"
-            class="px-8 py-3 bg-white text-[#5865F2] rounded-full font-bold hover:scale-105 transition-all flex items-center gap-2"
+            class="px-6 py-3 bg-white text-[#5865F2] rounded-full font-bold hover:scale-105 transition-all flex items-center gap-2"
           >
             <img src="/icons/redes/discord.svg" alt="Discord" class="w-6 h-6" />
             Invitar a Enma
           </a>
           <a
-            href="#features"
-            class="px-8 py-3 border-2 border-white text-white rounded-full font-bold hover:bg-white hover:text-[#5865F2] transition-all"
+            href="#commands"
+            class="px-6 py-3 border-2 border-white text-white rounded-full font-bold hover:bg-white hover:text-[#5865F2] transition-all"
           >
-            Ver características
+            Ver comandos
           </a>
         </div>
       </div>
@@ -215,11 +237,11 @@ const features = [
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section id="features" class="py-20">
+  <!-- Commands Section -->
+  <section id="commands" class="py-20">
     <div class="container mx-auto px-4">
       <SectionTitle
-        title="Características principales"
+        title="Comandos"
         icon="/icons/titles/features.svg"
       />
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -313,6 +335,16 @@ const features = [
     </div>
   </section>
 
+  <!-- Faq section -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <SectionTitle title="Preguntas Frecuentes" icon="/icons/titles/faq.svg" />
+      <div class="max-w-3xl mx-auto">
+        <FaqList faqs={faqs} client:load/>
+      </div>
+    </div>
+
+
   <section class="py-20">
     <div class="container mx-auto px-4">
       <SectionTitle title="Creador" icon="/icons/titles/creator.svg" />
@@ -321,7 +353,6 @@ const features = [
           class="bg-[#2B2D31] rounded-xl p-6 shadow-lg hover:shadow-xl transition-all"
         >
           <div id="discord-card" class="animate-pulse">
-            <!-- El contenido se cargará vía JavaScript -->
           </div>
         </div>
       </div>
@@ -440,7 +471,7 @@ const formatActivityTime = (timestamps: { start?: number | string }) => {
     }
 
     updatePresence();
-    setInterval(updatePresence, 10000); // Actualizar cada 10 segundos
+    setInterval(updatePresence, 10000);
   </script>
 
   <section class="py-20">
