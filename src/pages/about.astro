@@ -1,9 +1,21 @@
 ---
 import SectionTitle from '../components/sections/SectionTitle.astro';
 import Layout from '../layouts/Layout.astro';
+import { FloatingNav } from '../components/ui/floating-navbar';
+
+const homeNavItems = [
+  { name: "Inicio", link: "/" },
+  { name: "Proyectos", link: "/projects" },
+  { name: "Sobre mí", link: "/about" },
+  { name: "Certificaciones", link: "/certifications" },
+];
 ---
 
 <Layout title="About - Gonzalo Leal">
+    <FloatingNav 
+    navItems={homeNavItems} 
+    client:load
+  />
     <section class="py-10">
         <div class="container mx-auto px-4">
             <SectionTitle title="Sobre Mí" icon="/icons/titles/about.svg" />

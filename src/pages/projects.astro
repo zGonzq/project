@@ -2,6 +2,14 @@
 import ProjectCard from '../components/dependant/ProjectCard';
 import SectionTitle from '../components/sections/SectionTitle.astro';
 import Layout from '../layouts/Layout.astro';
+import { FloatingNav } from '../components/ui/floating-navbar';
+
+const homeNavItems = [
+  { name: "Inicio", link: "/" },
+  { name: "Proyectos", link: "/projects" },
+  { name: "Sobre mí", link: "/about" },
+  { name: "Certificaciones", link: "/certifications" },
+];
 
 const projects = [
   {
@@ -31,6 +39,10 @@ const projects = [
 ];
 ---
 <Layout title="Projects - Gonzalo Leal">
+  <FloatingNav 
+  navItems={homeNavItems} 
+  client:load
+/>
 
     <section class="py-20">
         <SectionTitle title="Todos los Proyectos" icon="/icons/titles/allProjects.svg" />

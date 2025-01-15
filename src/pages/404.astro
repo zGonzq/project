@@ -1,7 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { FloatingNav } from '../components/ui/floating-navbar';
+
+const homeNavItems = [
+  { name: "Inicio", link: "/" },
+  { name: "Proyectos", link: "/projects" },
+  { name: "Sobre mí", link: "/about" },
+  { name: "Certificaciones", link: "/certifications" },
+];
 ---
 <Layout title="404 - Gonzalo Leal">
+    <FloatingNav 
+    navItems={homeNavItems} 
+    client:load
+  />
     <section class="flex items-center justify-center flex-grow">
         <div class="items-center py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
             <div class="mx-auto max-w-screen-sm text-center">

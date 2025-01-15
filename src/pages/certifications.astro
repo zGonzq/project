@@ -2,6 +2,14 @@
 import Layout from "../layouts/Layout.astro"
 import SectionTitle from "../components/sections/SectionTitle.astro"
 import { AnimatedCard } from "../components/ui/AnimatedCard"
+import { FloatingNav } from '../components/ui/floating-navbar';
+
+const homeNavItems = [
+  { name: "Inicio", link: "/" },
+  { name: "Proyectos", link: "/projects" },
+  { name: "Sobre mí", link: "/about" },
+  { name: "Certificaciones", link: "/certifications" },
+];
 
 const certifications = [
     {
@@ -72,6 +80,10 @@ const groupedCertifications = certifications.reduce((acc, cert) => {
 }, {});
 ---
 <Layout title="Certificados - Gonzalo Leal">
+    <FloatingNav 
+    navItems={homeNavItems} 
+    client:load
+  />
     <section class="py-20">
         <div class="container mx-auto px-4">
             <SectionTitle title="Mis certificados" icon="/icons/titles/certificate.svg" />
