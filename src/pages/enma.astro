@@ -3,8 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import {FloatingNav} from "../components/ui/floating-navbar";
 
 const homeNavItems = [
+  { name: "Inicio", link: "/enma" },
+  { name: "Comandos", link: "/enma/commands" },
   { name: "Términos y servicios", link: "/enma/terms-and-services" },
-  { name: "Volver atrás", link: "/" },
 ];
 
 const stats = [
@@ -79,7 +80,6 @@ const detailedCategories = [
     image: "/img/events-preview.webp",
     gradient: "from-red-300 to-emerald-300"
   },
-  //sitema de logs
   {
     title: "Sistema de Logs",
     icon: "📜",

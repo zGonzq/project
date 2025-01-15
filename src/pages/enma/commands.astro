@@ -1,0 +1,266 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { FloatingNav } from "../../components/ui/floating-navbar";
+
+const homeNavItems = [
+  { name: "Inicio", link: "/enma" },
+  { name: "Comandos", link: "/enma/commands" },
+  { name: "Términos y servicios", link: "/enma/terms-and-services" },
+];
+
+
+const categories = [
+  { id: "economy", name: "Economía", icon: "💰" },
+  { id: "moderation", name: "Moderación", icon: "🛡️" },
+  { id: "fun", name: "Diversión", icon: "🎮" },
+  { id: "integrations", name: "Integraciones", icon: "🔗" },
+  { id: "utilities", name: "Utilidades", icon: "🛠️" },
+  { id: "automatic", name: "Automático", icon: "🤖" },
+  { id: "general", name: "General", icon: "🌐" },
+  { id: "admin", name: "Administración", icon: "⚙️" },
+
+];
+
+const commands = {
+economy: [
+    { name: "balance", description: "Muestra el saldo de tu cuenta o de otro usuario.", usage: "/balance [usuario]" },
+    { name: "daily", description: "Reclama tus monedas diarias.", usage: "/daily" },
+    { name: "mine", description: "Mina para encontrar minerales espaciales y ganar monedas.", usage: "/mine" },
+    { name: "pay", description: "Paga a otro usuario una cantidad de monedas.", usage: "/pay" },
+    { name: "rob", description: "Intenta robar monedas de otro usuario.", usage: "/rob" },
+    { name: "shop", description: "Muestra los roles disponibles en la tienda.", usage: "/shop" },
+    { name: "buy", description: "Compra un rol de la tienda.", usage: "/buy" },
+    { name: "work", description: "Trabaja para ganar monedas.", usage: "/work" },
+    { name: "miniwork", description: "Trabaja por un corto período para ganar algunas monedas.", usage: "/miniwork" },
+    { name: "coinflip", description: "Apuesta monedas en un lanzamiento de moneda.", usage: "/coinflip" },
+    { name: "crime", description: "Intenta cometer un crimen para ganar monedas.", usage: "/crime" },
+    { name: "fish", description: "Intenta pescar para ganar monedas.", usage: "/fish" },
+],
+moderation: [
+    { name: "timeout", description: "Silencia a un usuario.", usage: "/timeout" },
+    { name: "clear", description: "Limpia los mensajes del chat.", usage: "/clear" },
+    { name: "kick", description: "Expulsa a un usuario del servidor.", usage: "/kick" },
+    { name: "ban", description: "Prohíbe a un usuario del servidor.", usage: "/ban" },
+    { name: "unban", description: "Elimina la prohibición de un usuario del servidor.", usage: "/unban" },
+    { name: "warn", description: "Advierte a un usuario.", usage: "/warn" },
+    { name: "history", description: "Muestra el historial de advertencias de un usuario.", usage: "/history" },
+    { name: "cleanhistory", description: "Elimina todas las advertencias de un usuario.", usage: "/cleanhistory" },
+    { name: "slowmode", description: "Establece el modo lento en un canal.", usage: "/slowmode" },
+    { name: "lock", description: "Bloquea un canal.", usage: "/lock" },
+    { name: "unlock", description: "Desbloquea un canal.", usage: "/unlock" },
+    { name: "purge", description: "Elimina mensajes de un usuario específico.", usage: "/purge" },
+    { name: "nick", description: "Cambia el apodo de un usuario.", usage: "/nick" },
+    { name: "unwarn", description: "Elimina una advertencia de un usuario.", usage: "/unwarn" },
+],
+fun: [
+    { name: "8ball", description: "Hazle una pregunta a la bola mágica.", usage: "/8ball" },
+    { name: "rps", description: "Juega piedra, papel o tijeras.", usage: "/rps" },
+    { name: "rng", description: "Genera un número aleatorio.", usage: "/rng" },
+],
+integrations: [
+    { name: "osu", description: "Obtiene estadísticas de un usuario de osu!", usage: "/osu" },
+    { name: "findanime", description: "Busca información de un anime a partir de una imagen.", usage: "/findanime" },
+    { name: "randomanime", description: "Recomienda un anime aleatorio.", usage: "/randomanime" },
+    { name: "findpokemon", description: "Busca información de un Pokémon específico.", usage: "/findpokemon" },
+    { name: "weather", description: "Obtiene el clima de una ciudad específica.", usage: "/weather" },
+    { name: "notifications", description: "Gestiona las notificaciones twitch y youtube.", usage: "/notifications" },
+],
+utilities: [
+    { name: "help", description: "Muestra la lista de comandos organizados por categorías.", usage: "/help" },
+    { name: "feedback", description: "Envía tus comentarios o sugerencias.", usage: "/feedback" },
+    { name: "todo", description: "Gestiona tu lista de tareas.", usage: "/todo" },
+    { name: "embed", description: "Crea un embed personalizado.", usage: "/embed" },
+    { name: "emoji", description: "Obtener el png de un emoji.", usage: "/emoji" },
+    { name: "cumpleanos", description: "Gestiona tu fecha de cumpleaños.", usage: "/cumpleanos" },
+],
+admin: [
+    { name: "setshop", description: "Gestiona la tienda de roles.", usage: "/setshop" },
+    { name: "giveall", description: "Añade un rol a todos los usuarios o bots del servidor.", usage: "/giveall" },
+    { name: "logs", description: "Gestiona los logs del servidor.", usage: "/logs" },
+    { name: "welcomemsg", description: "Configura los mensajes de bienvenida y despedida.", usage: "/welcomemsg" },
+    { name: "autorole", description: "Configura autoroles para los usuarios.", usage: "/autorole" },
+    { name: "automoderator", description: "Configura el auto moderador del servidor.", usage: "/automoderator" },
+],
+general: [
+    { name: "invite", description: "Invita al bot a tu servidor.", usage: "/invite" },
+    { name: "ping", description: "Muestra la latencia del bot.", usage: "/ping" },
+    { name: "emojilist", description: "Muestra la lista de emojis del servidor.", usage: "/emojilist" },
+],
+automatic: [
+    { name: "dailyanime", description: "Recomienda un anime aleatorio diariamente.", usage: "/dailyanime" },
+],
+};
+---
+
+<Layout title="Comandos de Enma">
+    <FloatingNav navItems={homeNavItems} client:load />
+    <div class="min-h-screen p-8">
+      <div class="max-w-6xl mx-auto">
+        <!-- Header y Controles -->
+        <div class="mb-12">
+          <h1 class="text-4xl font-bold text-center mb-6">Comandos de Enma</h1>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <!-- Dropdown de Categorías -->
+            <div class="relative w-full sm:w-64">
+                <select 
+                id="category-select"
+                class="w-full p-3 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 appearance-none cursor-pointer"
+              >
+                <option value="">Todas las categorías</option>
+                {categories.map(cat => (
+                  <option value={cat.id}>{cat.icon} {cat.name}</option>
+                ))}
+              </select>
+              <div class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </div>
+  
+            <!-- Barra de búsqueda -->
+            <input
+              type="search"
+              placeholder="Buscar comandos..."
+              class="w-full sm:w-96 p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-discord"
+            />
+          </div>
+        </div>
+  
+        <!-- Secciones de Comandos -->
+        <div class="space-y-12">
+          {Object.entries(commands).map(([categoryId, categoryCommands]) => (
+            <section id={categoryId} class="scroll-mt-24 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+              <div class="flex items-center gap-3 mb-6 border-b pb-4 dark:border-gray-700">
+                <span class="text-3xl">{categories.find(c => c.id === categoryId)?.icon}</span>
+                <h2 class="text-2xl font-bold">{categories.find(c => c.id === categoryId)?.name}</h2>
+              </div>
+  
+              <div class="grid gap-4 sm:grid-cols-2">
+                {categoryCommands.map(cmd => (
+                  <div class="command-card bg-gray-50 dark:bg-gray-700 p-4 rounded-lg hover:shadow-md transition-all">
+                    <div class="flex justify-between items-start">
+                      <div>
+                        <code class="text-discord font-semibold block mb-2">{cmd.usage}</code>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">{cmd.description}</p>
+                      </div>
+                      <button 
+                        class="text-gray-400 hover:text-discord transition-colors p-2"
+                        title="Copiar comando"
+                      >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+      </div>
+    </div>
+  </Layout>
+
+
+  <script define:vars={{ categories }}>
+    const categorySelect = document.getElementById('category-select');
+    const searchInput = document.querySelector('input[type="search"]');
+    const sections = document.querySelectorAll('section');
+    const commandCards = document.querySelectorAll('.command-card');
+  
+    // Función para mostrar/ocultar secciones
+    const filterSections = (categoryId) => {
+      sections.forEach(section => {
+        section.style.display = (categoryId === '' || section.id === categoryId) ? 'block' : 'none';
+      });
+    };
+  
+    // Función para reiniciar la búsqueda
+    const resetSearch = () => {
+      searchInput.value = '';
+      commandCards.forEach(card => {
+        card.style.display = 'block';
+      });
+    };
+  
+    // Función de búsqueda mejorada
+    const handleSearch = (searchTerm) => {
+      const currentCategory = categorySelect.value;
+  
+      if (searchTerm === '') {
+        filterSections(currentCategory);
+        commandCards.forEach(card => {
+          const section = card.closest('section');
+          if (section && (currentCategory === '' || section.id === currentCategory)) {
+            card.style.display = 'block';
+          }
+        });
+        return;
+      }
+  
+      let hasResults = false;
+      sections.forEach(section => {
+        let sectionHasVisibleCards = false;
+        const sectionCards = section.querySelectorAll('.command-card');
+        
+        sectionCards.forEach(card => {
+          const commandText = card.textContent?.toLowerCase() || '';
+          const isVisible = commandText.includes(searchTerm);
+          card.style.display = isVisible ? 'block' : 'none';
+          if (isVisible) {
+            sectionHasVisibleCards = true;
+            hasResults = true;
+          }
+        });
+  
+        section.style.display = sectionHasVisibleCards ? 'block' : 'none';
+      });
+  
+      if (!hasResults) {
+        sections.forEach(section => {
+          section.style.display = 'none';
+        });
+      }
+    };
+  
+    // Mostrar categoría inicial
+    window.addEventListener('DOMContentLoaded', () => {
+      const firstCategory = categories[0].id;
+      categorySelect.value = firstCategory;
+      filterSections(firstCategory);
+    });
+  
+    // Manejar cambios en el dropdown
+    categorySelect?.addEventListener('change', (e) => {
+      const categoryId = e.target.value;
+      resetSearch();
+      filterSections(categoryId);
+    });
+  
+    // Eventos de búsqueda
+    searchInput?.addEventListener('input', (e) => {
+      handleSearch(e.target.value.toLowerCase());
+    });
+  
+    searchInput?.addEventListener('search', (e) => {
+      if (e.target.value === '') {
+        resetSearch();
+        filterSections(categorySelect.value);
+      } else {
+        handleSearch(e.target.value.toLowerCase());
+      }
+    });
+  </script>
+  
+  <style>
+    section {
+      transition: all 0.3s ease;
+    }
+  </style>
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
