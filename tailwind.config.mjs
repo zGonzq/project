@@ -9,7 +9,8 @@ export default {
           DEFAULT: '#F91362',
           light: '#FF8E44',
           dark: '#35126A'
-        }
+        },
+        discord: '#5865F2'
       },
       fontFamily: {
         sans: ['Onest', 'system-ui', 'sans-serif'],

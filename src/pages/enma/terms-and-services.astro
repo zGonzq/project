@@ -1,0 +1,50 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { FloatingNav } from "../../components/ui/floating-navbar";
+const homeNavItems = [
+  { name: "Volver atrás", link: "/enma" },
+];
+
+
+const terms = [
+    {
+        title: "Introducción",
+        content: "Bienvenido a Enma. Al utilizar nuestro bot de Discord, aceptas cumplir con estos términos y condiciones. Por favor, léelos detenidamente."
+    },
+    {
+        title: "Uso del Bot",
+        content: "Enma está diseñado para mejorar tu experiencia en Discord. No debes utilizar el bot para actividades ilegales, abusivas o que violen las políticas de Discord."
+    },
+    {
+        title: "Privacidad",
+        content: "Nos tomamos tu privacidad en serio. Enma recopila y almacena datos necesarios para su funcionamiento. No compartimos tu información con terceros sin tu consentimiento."
+    },
+    {
+        title: "Responsabilidad",
+        content: "Enma se proporciona 'tal cual' y no ofrecemos garantías de ningún tipo. No somos responsables de ningún daño que pueda resultar del uso del bot."
+    },
+    {
+        title: "Modificaciones",
+        content: "Nos reservamos el derecho de modificar estos términos en cualquier momento. Te notificaremos sobre cualquier cambio importante."
+    },
+    {
+        title: "Contacto",
+        content: "Si tienes alguna pregunta o inquietud sobre estos términos, por favor contáctanos a través de nuestro servidor de soporte en Discord."
+    }
+];
+---
+
+<Layout title="Términos y Servicios de Enma">
+    <FloatingNav navItems={homeNavItems} client:load />
+    <div class="max-w-7xl mx-auto py-20 px-4">
+        <h1 class="text-5xl font-bold mb-8 p-2 bg-gradient-to-r from-discord to-discord/80 bg-clip-text text-transparent text-center">Términos y Servicios</h1>
+        <div class="space-y-12">
+            {terms.map(term => (
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                    <h2 class="text-3xl font-semibold mb-4 text-discord">{term.title}</h2>
+                    <p class="text-lg text-gray-700 dark:text-gray-300">{term.content}</p>
+                </div>
+            ))}
+        </div>
+    </div>
+</Layout>

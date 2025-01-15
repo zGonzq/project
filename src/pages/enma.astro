@@ -1,0 +1,264 @@
+---
+import Layout from "../layouts/Layout.astro";
+import {FloatingNav} from "../components/ui/floating-navbar";
+
+const homeNavItems = [
+  { name: "Términos y servicios", link: "/enma/terms-and-services" },
+  { name: "Volver atrás", link: "/" },
+];
+
+const stats = [
+  { number: "5+", label: "Servidores" },
+  { number: "200+", label: "Usuarios" },
+  { number: "100k+", label: "Mensajes" },
+  { number: "99.9%", label: "Uptime" }
+];
+
+const detailedCategories = [
+  {
+    title: "Moderación Avanzada",
+    icon: "⚜️",
+    description: "Mantén tu servidor seguro y ordenado con nuestro sistema de moderación avanzado. Gestiona usuarios problemáticos, mantén el chat limpio y establece reglas claras.",
+    mainCommands: ["/ban", "/kick", "/mute", "/clear", "/slowmode"],
+    image: "/img/moderation-preview.webp",
+    gradient: "from-purple-700 to-rose-700"
+  },
+  {
+    title: "Sistema de Economía",
+    icon: "💵",
+    description: "Un completo sistema económico que mantiene a tu comunidad activa y comprometida. Los usuarios pueden trabajar, ganar monedas y competir entre ellos.",
+    mainCommands: ["/work", "/balance", "/pay", "/shop", "/daily"],
+    image: "/img/economy-preview.webp",
+    gradient: "from-green-400 to-green-200/80"
+  },
+  {
+    title: "Sistema de Bienvenidas",
+    icon: "🎈",
+    description: "Da la bienvenida a nuevos miembros con mensajes personalizados y roles automáticos. Personaliza el mensaje de bienvenida y despídete de los miembros que se van.",
+    mainCommands: ["/welcomemsg", "/autorole", "/goodbye"],
+    image: "/img/welcome-preview.webp",
+    gradient: "from-yellow-200 to-yellow-500"
+  },
+  {
+    title: "Sistema de Notificaciones",
+    icon: "🔔",
+    description: "Mantente al tanto de las últimas transmisiones de tus streamers favoritos. Recibe notificaciones en tiempo real de Twitch y YouTube.",
+    mainCommands: ["/notifications twitch/youtube",],
+    image: "/img/notifications-preview.webp",
+    gradient: "from-cyan-200 to-cyan-900"
+  },
+  {
+    title: "Sistema de Tareas",
+    icon: "📝",
+    description: "Organiza tus tareas diarias y mantén un registro de tus pendientes. Crea, elimina y marca tus tareas como completadas.",
+    mainCommands: ["/todo add/remove/list/status"],
+    image: "/img/todo-preview.webp",
+    gradient: "from-discord to-discord/80"
+  },
+  {
+    title: "Sistema de Cumpleaños",
+    icon: "🎂",
+    description: "Nunca olvides felicitar a tus amigos en su día especial. Configura tu fecha de cumpleaños y recibe felicitaciones automáticas.",
+    mainCommands: ["/cumpleanos registrar/ver/borrar"],
+    image: "/img/birthday-preview.webp",
+    gradient: "from-primary-light to-primary-dark/80"
+  },
+  {
+    title: "Automatización de Roles",
+    icon: "🎮",
+    description: "Crea autoroles para que los usuarios obtengan personalmente los roles que deseen. Estos pueden ser roles de juegos, colores o cualquier otro tipo. Removibles en cualquier momento.",
+    mainCommands: ["/autorole list/send/add/create/remove"],
+    image: "/img/autorole-preview.webp",
+    gradient: "from-primary to-discord/80"
+  },
+  {
+    title: "Eventos Automatizados",
+    icon: "🎉",
+    description: "Envía mensajes automáticos en como animes, mangas del día, proximamente habrá más eventos. Quedate atento.",
+    mainCommands: ["/dailyanime", "/dailymanga"],
+    image: "/img/events-preview.webp",
+    gradient: "from-red-300 to-emerald-300"
+  }
+];
+
+const faq =[
+        {
+          question: "¿Cómo puedo invitar a Enma a mi servidor?",
+          answer: "Simplemente haz clic en el botón 'Invitar a Enma' en la parte superior de la página. Sigue las instrucciones de Discord para autorizar el bot en tu servidor."
+        },
+        {
+          question: "¿Es gratis usar Enma?",
+          answer: "Sí, Enma es completamente gratuito para todos los servidores de Discord. No hay límites en el número de servidores o usuarios que puedes tener."
+        },
+        {
+          question: "¿Qué permisos necesita Enma?",
+          answer: "Enma requiere permisos básicos de moderación para funcionar correctamente, como gestionar mensajes, roles y miembros. Todos los permisos se solicitan durante el proceso de invitación."
+        },
+        {
+          question: "¿Cómo puedo configurar el bot?",
+          answer: "Cada comando es bastante intuitivo y fácil de usar. Puedes configurar la mayoría de las funciones con un solo comando. Si necesitas ayuda, puedes unirte a nuestro servidor de soporte."
+        },
+        {
+          question: "¿Dónde puedo obtener ayuda adicional?",
+          answer: "Únete a nuestro servidor de soporte donde nuestro equipo y la comunidad pueden ayudarte con cualquier pregunta o problema."
+        }
+      ]
+---
+
+
+<Layout title="Enma - Tu Bot de Discord Todo en Uno">
+    <FloatingNav navItems={homeNavItems} flipWords={["Enma", "Discord bot"]} client:load  />
+  <!-- Hero Section -->
+  <div class="relative overflow-hidden min-h-screen flex items-center">
+    <div class="absolute inset-0 "></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full">
+      <div class="text-center relative">
+        <h1 class="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-discord to-discord/80 bg-clip-text text-transparent">
+          Potencia tu Servidor de Discord
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12">
+          Enma es el bot todo en uno que necesitas para llevar tu servidor al siguiente nivel
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Invitar a Enma"
+            href="https://discord.com/oauth2/authorize?client_id=1171876289632813148&permissions=8&integration_type=0&scope=bot"
+            class="px-8 py-4 bg-discord hover:bg-discord/90 text-white rounded-lg text-lg font-semibold transition-all transform hover:scale-105"
+            
+          >
+            Invitar a Enma
+          </a>
+          <a
+            href="https://discord.gg/MFAAW3ahmy"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Invitar a Enma"
+            class="px-8 py-4 bg-gray-800 dark:bg-gray-700 text-white rounded-lg text-lg font-semibold hover:opacity-90 transition-all transform hover:scale-105"
+          >
+            Soporte
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats Section -->
+  <div class="bg-gray-50 dark:bg-gray-800 rounded-md">
+    <div class="max-w-7xl mx-auto py-20 px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {stats.map(stat => (
+          <div class="text-center transform hover:scale-105 transition-transform">
+            <div class="text-4xl font-bold text-discord mb-2">{stat.number}</div>
+            <div class="text-gray-600 dark:text-gray-300">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div class="py-24">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-16">Características</h2>
+      
+      {detailedCategories.map((category, index) => (
+        <div class={`flex flex-col md:flex-row items-center gap-12 mb-24 ${
+          index % 2 === 1 ? 'md:flex-row-reverse' : ''
+        }`}>
+          <div class="flex-1">
+            <div class={`inline-block text-4xl mb-6 bg-gradient-to-r ${category.gradient} w-16 h-16 rounded-lg flex items-center justify-center text-white`}>
+              {category.icon}
+            </div>
+            <h3 class="text-3xl font-bold mb-4">{category.title}</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-lg mb-6">
+              {category.description}
+            </p>
+            <div class="space-y-2">
+              <h4 class="font-semibold text-xl mb-3">Comandos principales:</h4>
+              <div class="flex flex-wrap gap-2">
+                {category.mainCommands.map(cmd => (
+                  <span class="bg-discord/10 text-discord px-3 py-1 rounded-full font-mono">
+                    {cmd}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex-1">
+            <img
+              src={category.image}
+              alt={`Preview de ${category.title}`}
+              class="rounded-xl shadow-lg w-64 hover:scale-105 transition-all"
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="py-24">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-16">Preguntas Frecuentes</h2>
+      {faq.map((faq, index) => (
+        <div class="border my-4 dark:border-gray-700 rounded-lg">
+          <button
+            class="w-full px-6 py-4 text-left flex justify-between items-center"
+            onclick={`
+              const content = document.getElementById('faq-${index}');
+              const icon = this.querySelector('svg');
+              content.classList.toggle('is-active');
+              icon.classList.toggle('rotate-180');
+            `}
+          >
+            <span class="font-semibold text-lg">{faq.question}</span>
+            <svg 
+              class="w-5 h-5 transform transition-transform duration-300" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div 
+            id={`faq-${index}`} 
+            class="overflow-hidden max-h-0 transition-all duration-300 ease-in-out"
+            style="opacity: 0"
+          >
+            <p class="text-gray-600 dark:text-gray-300 px-6 pb-4">{faq.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <style>
+    .is-active {
+      max-height: 500px !important;
+      opacity: 1 !important;
+    }
+  </style>
+
+
+
+  <!-- CTA Section -->
+  <div class="bg-discord rounded-lg">
+    <div class="max-w-7xl mx-auto px-4 py-20 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
+        ¿Listo para mejorar tu servidor?
+      </h2>
+      <p class="text-white text-xl mb-8 max-w-2xl mx-auto opacity-90">
+        Únete a los servidores que ya confían en Enma para gestionar y mejorar su comunidad.
+      </p>
+      <a
+        href="#"
+        class="inline-block px-8 py-4 bg-white text-discord rounded-lg text-lg font-semibold hover:bg-gray-100 transition-all transform hover:scale-105"
+      >
+        Comenzar Ahora
+      </a>
+    </div>
+  </div>
+</Layout>
