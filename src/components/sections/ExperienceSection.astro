@@ -3,9 +3,17 @@ import SectionTitle from './SectionTitle.astro';
 import { AnimatedCard } from '../ui/AnimatedCard';
 
 const experiences = [
+{
+        date: "2025 Mar - Presente",
+        logo: "/logos/morris.webp",
+        title: "Junior Full-Stack Developer (Practicante)",
+        company: "Morris & Opazo | Morris Labs",
+        description: "Desarrollo web utilizando tecnologías .NET Core 8 MVC y Web API con C#.",
+    },
     {
         date: "2022 Dic - 2023 Feb",
         title: "Practicante de Gráfica",
+        logo: "/logos/graficsur.webp",
         company: "Grafic Sur",
         description: "Realización de trabajos de diseño gráfico, impresión, atención al cliente y ensamblaje de productos.",
     },
@@ -25,15 +33,21 @@ const experiences = [
                 <div class="w-4 h-4 rounded-full bg-primary group-hover:scale-125 transition-transform"></div>
               </div>
               <div class="ml-24 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg mb-6 group-hover:shadow-xl transition-all">
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">{experience.title}</h3>
-                <div class="text-gray-600 dark:text-gray-300 mb-2">{experience.company}</div>
-                <p class="text-gray-700 dark:text-gray-400">{experience.description}</p>
-                <span class="inline-block px-3 py-1 text-sm text-primary bg-primary/10 rounded-full my-2">
-                  {experience.date}
-                </span>
+                <div class="flex gap-4">
+                  <div class="relative flex h-12 w-12 flex-none items-center justify-center rounded-lg">
+                    <img loading="lazy" src={experience.logo} alt={experience.company} class="h-full w-full rounded-md object-contain" />
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">{experience.title}</h3>
+                    <div class="text-gray-600 dark:text-gray-300 mb-2">{experience.company}</div>
+                    <p class="text-gray-700 dark:text-gray-400">{experience.description}</p>
+                    <span class="inline-block px-3 py-1 text-sm text-primary bg-primary/10 rounded-full my-2">
+                      {experience.date}
+                    </span>
+                  </div>
+                </div>
               </div>
-              
-            </div>
+            </div>     
         ))}
       </div>
     </div>
